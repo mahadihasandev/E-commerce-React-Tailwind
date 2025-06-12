@@ -15,6 +15,7 @@ export default {
       colors:{
         'lightDark':"#767676",
         "deepDark":"#262626",
+        'lightGray':"#F5F5F3",
       },
     },
   },
