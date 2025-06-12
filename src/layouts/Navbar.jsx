@@ -1,14 +1,25 @@
 import Container from './../component/Container';
 import Flex from '../component/Flex';
 import Image from '../component/Image';
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.png';
+import List from '../component/List';
 
 function Navbar() {
   return (
-    <nav>
+    <nav className='py-8 bg-white'>
         <Container>
             <Flex>
-               <Image src={Logo} className="" alt=""/> 
+              <div className='w-[38%]'><Image src={Logo} className="" alt=""/> </div>
+              <div className='w-[62%]'>
+              <ul className='flex gap-10'>
+                <List text='Home'/>
+                <List text='Shop'/>
+                <List text='About'/>
+                <List text='Journal'/>
+                <List text='Contact'/>
+              </ul>
+              </div>
+               
             </Flex>
         </Container>
     </nav>

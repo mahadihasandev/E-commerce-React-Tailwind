@@ -9,6 +9,13 @@ export default {
       maxWidth:{
         "container":"1604px",
       },
+      fontFamily:{
+        'DMs':"DM Sans",
+      },
+      colors:{
+        'lightDark':"#767676",
+        "deepDark":"#262626",
+      },
     },
   },
   plugins: [],
