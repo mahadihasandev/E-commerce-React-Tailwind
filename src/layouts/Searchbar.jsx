@@ -19,8 +19,8 @@ function Searchbar() {
                 </Flex>
                 
                 </div>
-                <div className='w-4/12 relative'>
-                <input className='w-full  border-none bg-white py-4 px-7 rounded-lg 
+                <div className='w-4/12 relative ml-5'>
+                <input className='w-full border-none bg-white py-4 px-7 rounded-lg 
                 placeholder:font-DMs placeholder:text-[14px] 
                 placeholder:font-normal' type="text" placeholder='Search Product'/>
                 <FaSearch onClick={()=>{window.open("https://www.google.com","_blank")}} className='absolute top-1/2 right-[17px] -translate-y-1/2' />
