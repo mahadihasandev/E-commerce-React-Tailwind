@@ -5,6 +5,10 @@ import Container from '../component/Container'
 import Flex from '../component/Flex'
 import Image from '../component/Image'
 import logo from '../assets/footerlogo.png'
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+
 
 function Footer() {
   return (
@@ -55,6 +59,19 @@ company@domain.com"/>
     <div className='w-[29%]'>
       <Image className='h-[29px] w-[122px]' src={logo}/>
     </div>
+      </Flex>
+      <Flex className="pt-[65px] justify-between">
+
+        <div className='flex gap-x-[26px]'>
+          <FaFacebookF/>
+          <FaLinkedinIn/>
+          <FaInstagram/>
+        </div>
+        <div>
+          <SmallList text='2020 Orebi Minimal eCommerce Figma Template by Adveits'/>
+          
+          
+        </div>
       </Flex>
     </Container>
     </footer>
