@@ -10,7 +10,7 @@ function Navbar() {
         <Container>
             <Flex>
               <div className='w-[38%]'><Image src={Logo} className="" alt=""/> </div>
-              <div className='w-[62%]'>
+              <div className='w-[40%]'>
               <ul className='flex gap-10'>
                 <List text='Home'/>
                 <List text='Shop'/>
@@ -19,6 +19,7 @@ function Navbar() {
                 <List text='Contact'/>
               </ul>
               </div>
+              <div className='w-[22%]'></div>
                
             </Flex>
         </Container>

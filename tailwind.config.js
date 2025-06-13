@@ -16,6 +16,7 @@ export default {
         'lightDark':"#767676",
         "deepDark":"#262626",
         'lightGray':"#F5F5F3",
+        'faintGray':"#6D6D6D",
       },
     },
   },
