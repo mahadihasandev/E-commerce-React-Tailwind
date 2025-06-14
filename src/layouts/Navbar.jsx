@@ -3,6 +3,7 @@ import Flex from '../component/Flex';
 import Image from '../component/Image';
 import Logo from '../assets/logo.png';
 import List from '../component/List';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -12,8 +13,8 @@ function Navbar() {
               <div className='w-[38%]'><Image src={Logo} className="" alt=""/> </div>
               <div className='w-[40%]'>
               <ul className='flex gap-10'>
-                <List text='Home'/>
-                <List text='Shop'/>
+                <Link to='/'><List text='Home'/></Link>
+                <Link to='/shop'><List text='Shop'/></Link>
                 <List text='About'/>
                 <List text='Journal'/>
                 <List text='Contact'/>
