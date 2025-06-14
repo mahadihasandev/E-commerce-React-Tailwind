@@ -33,12 +33,12 @@ function Home() {
 
               <Flex className='gap-x-8 items-center'>
               <FaTruck className='text-base'/>
-              <SmallList text='Two years warranty' className='text-base'/>
+              <SmallList text='Free shipping' className='text-base'/>
              </Flex>
 
              <Flex className='gap-x-8 items-center'>
               <GiReturnArrow className='text-base'/>
-              <SmallList text='Two years warranty' className='text-base'/>
+              <SmallList text='Return policy in 30 days' className='text-base'/>
              </Flex>         
         </Flex>
       </Container>
