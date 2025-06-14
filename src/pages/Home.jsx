@@ -11,6 +11,9 @@ import SmallList from '../component/SmallList';
 import { Fa2 } from "react-icons/fa6";
 import { FaTruck } from "react-icons/fa";
 import { GiReturnArrow } from "react-icons/gi";
+import Add1 from '../assets/Ad_1.jpg';
+import Add2 from '../assets/Ad_2.jpg';
+import Add3 from '../assets/Ad_3.jpg';
 
 function Home() {
   return (
@@ -36,6 +39,25 @@ function Home() {
               <SmallList text='Two years warranty' className='text-base'/>
              </Flex>
              
+        </Flex>
+      </Container>
+      <Container>
+        <Flex className='gap-x-10 pt-[140px] pb-[128px]'>
+          <div className='w-1/2'>
+          <div className='w-[780px] h-[780px]'>
+            <Image className='w-full' src={Add1} />
+          </div>
+          </div>
+          <div className='w-1/2'>
+          <Flex className='flex-col gap-y-10'>
+              <div className='w-[784px] h-[370px]'>
+                <Image className='w-full' src={Add2} />
+              </div>
+              <div className='w-[784px] h-[370px]'>
+                <Image className='w-full' src={Add3} />
+              </div>
+          </Flex>
+          </div>
         </Flex>
       </Container>
       <Footer/>
