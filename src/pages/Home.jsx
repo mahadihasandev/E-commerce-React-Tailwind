@@ -22,7 +22,9 @@ function Home() {
       <Searchbar/>
       <Link to='/#'><Image className='w-full' src={BannerImg}/>
       </Link>
-      <Container>
+      
+      <section className='border-b-[1px] border-[#F0F0F0]'>
+        <Container>
         <Flex className="py-8 justify-between">
              <Flex className='gap-x-8 items-center'>
               <Fa2 className='text-sm'/>
@@ -37,10 +39,11 @@ function Home() {
              <Flex className='gap-x-8 items-center'>
               <GiReturnArrow className='text-base'/>
               <SmallList text='Two years warranty' className='text-base'/>
-             </Flex>
-             
+             </Flex>         
         </Flex>
       </Container>
+      </section>
+
       <Container>
         <Flex className='gap-x-10 pt-[140px] pb-[128px]'>
           <div className='w-1/2'>
