@@ -14,6 +14,12 @@ import { GiReturnArrow } from "react-icons/gi";
 import Add1 from '../assets/Ad_1.jpg';
 import Add2 from '../assets/Ad_2.jpg';
 import Add3 from '../assets/Ad_3.jpg';
+import CommonHeading from '../component/CommonHeading';
+import Card from '../component/Card';
+import cardImg1 from '../assets/cardImg1.jpg'
+import cardImg2 from '../assets/cardImg2.jpg'
+import cardImg3 from '../assets/cardImg3.jpg'
+import cardImg4 from '../assets/cardImg4.jpg'
 
 function Home() {
   return (
@@ -63,6 +69,15 @@ function Home() {
           </div>
         </Flex>
       </Container>
+
+        <section>
+          <Container>
+            <CommonHeading className='pb-8' text='New Arrival'/>
+            
+            
+          </Container>
+        </section>
+
       <Footer/>
     </div>
   )
