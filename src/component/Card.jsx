@@ -16,7 +16,7 @@ function Card({src,className}) {
         <div className='w-[370px] h-[370px] relative'>            
             <Image src={src}/>
             <div className='absolute -bottom-1/3 bg-white opacity-0 h-2/5 w-full 
-        left-0 group-hover:bottom-0 group-hover:opacity-90 duration-500'>
+        left-0 group-hover:bottom-0 group-hover:opacity-90 duration-500 invisible group-hover:visible'>
           <Flex className="flex-col gap-y-[21px] items-end px-[30px] py-[26px]">
             
           <Flex className='items-center gap-x-[15px]'>
