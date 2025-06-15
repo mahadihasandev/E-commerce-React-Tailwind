@@ -8,7 +8,7 @@ import { FaSync } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 
 
-function Card({src,className}) {
+function Card({src,className,nameText,priceText,colorText}) {
   return (
     <>
     <div className={`w-[370px] h-[465px] relative group ${className}`}>
@@ -42,10 +42,10 @@ function Card({src,className}) {
         </div>
         
         <Flex className='justify-between pt-6 pb-3'>
-            <MidList text='Basic Crew Neck Tee'/>
-            <SmallList className='text-[16px]' text='$44.00'/>
+            <MidList text={nameText}/>
+            <SmallList className='text-[16px]' text={priceText}/>
         </Flex>
-            <SmallList className='text-[16px]' text='Black'/>
+            <SmallList className='text-[16px]' text={colorText}/>
     </div>
     </>
   )
