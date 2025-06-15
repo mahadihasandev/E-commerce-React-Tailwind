@@ -73,7 +73,12 @@ function Home() {
         <section>
           <Container>
             <CommonHeading className='pb-8' text='New Arrival'/>
-            
+            <Flex className='gap-x-10'>
+              <Card src={cardImg1}/>
+              <Card src={cardImg2}/>
+              <Card src={cardImg3}/>
+              <Card src={cardImg4}/>
+            </Flex>
             
           </Container>
         </section>
