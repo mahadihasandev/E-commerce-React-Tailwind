@@ -60,14 +60,15 @@ company@domain.com"/>
       <Image className='h-[29px] w-[122px]' src={logo}/>
     </div>
       </Flex>
-      <Flex className="pt-[65px] justify-between">
+
+      <Flex className="pt-[65px] gap-x-[1037px]">
 
         <div className='flex gap-x-[26px]'>
           <FaFacebookF/>
           <FaLinkedinIn/>
           <FaInstagram/>
         </div>
-        <div>
+        <div className=''>
           <SmallList text='2020 Orebi Minimal eCommerce Figma Template by Adveits'/>
           
           
