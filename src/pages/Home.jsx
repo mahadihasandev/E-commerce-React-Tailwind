@@ -90,9 +90,9 @@ function Home() {
           <Container>
             <CommonHeading className='' text='Our BestSellers'/>
             <Flex className='gap-x-10 py-10'>
-              <Link to=''>
+              
                   <Card src={cardImg1} nameText='Basic Crew Neck Tee' colorText='Black' priceText='$44.00'/>
-              </Link>
+              
               <Card src={cardImg2} nameText='Smart Watch' colorText='Black' priceText='$50.00'/>
               <Card src={cardImg3} nameText='Basket' colorText='Multi color' priceText='$20.00'/>
               <Card src={cardImg4} nameText='Doll' colorText='Gray' priceText='$30.00'/>
@@ -110,9 +110,9 @@ function Home() {
           <Container>
             <CommonHeading className='' text='Special Offers'/>
             <Flex className='gap-x-10 py-10'>
-              <Link to=''>
+              
                   <Card src={cardImg1} nameText='Basic Crew Neck Tee' colorText='Black' priceText='$44.00'/>
-              </Link>
+              
               <Card src={cardImg2} nameText='Smart Watch' colorText='Black' priceText='$50.00'/>
               <Card src={cardImg3} nameText='Basket' colorText='Multi color' priceText='$20.00'/>
               <Card src={cardImg4} nameText='Doll' colorText='Gray' priceText='$30.00'/>
