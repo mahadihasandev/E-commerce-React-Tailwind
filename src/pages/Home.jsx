@@ -26,8 +26,7 @@ import offer from '../assets/offer.png';
 function Home() {
   return (
     <div>
-      <Navbar/>
-      <Searchbar/>
+      
       <Link to='/#'><Image className='w-full' src={BannerImg}/>
       </Link>
       
@@ -120,7 +119,7 @@ function Home() {
           </Container>
         </section>
 
-      <Footer/>
+      
     </div>
   )
 }
