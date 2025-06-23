@@ -6,10 +6,9 @@ import Footer from '../layouts/Footer'
 function Shop() {
   return (
   <>
-       <Navbar/>
-      <Searchbar/>
+       
       <div className='text-5xl font-extrabold'>Shop</div>
-      <Footer/>
+      
     
     </>
   )
