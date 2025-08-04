@@ -9,7 +9,7 @@ import ProductFour from '../assets/product4.png';
 import CommonHeading from '../component/CommonHeading';
 import MidList from '../component/MidList';
 import SmallList from '../component/SmallList'
-import { FaStar } from "react-icons/fa6";
+import { FaPlus, FaStar } from "react-icons/fa6";
 import Button from '../component/Button';
 
 function ProductDetails() {
@@ -123,6 +123,14 @@ const [star5,setStar5]=useState(false);
       <Flex className='gap-x-5 items-center py-7'>
         <Button text='Add to Wish List'/>
        <Button text='Add To Cart'/>
+      </Flex>
+      </div>
+
+      <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
+      <Flex className='justify-between items-center py-7'>
+        <SmallList className='!font-extrabold !text-black' text='FEATURES & DETAILS'/>
+        <FaPlus />
+
       </Flex>
       </div>
 
