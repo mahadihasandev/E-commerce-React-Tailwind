@@ -10,6 +10,7 @@ import CommonHeading from '../component/CommonHeading';
 import MidList from '../component/MidList';
 import SmallList from '../component/SmallList'
 import { FaStar } from "react-icons/fa6";
+import Button from '../component/Button';
 
 function ProductDetails() {
 const [star1,setStar1]=useState(false);
@@ -119,8 +120,9 @@ const [star5,setStar5]=useState(false);
       </div>
 
       <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
-      <Flex className='gap-x-14 items-center py-7'>
-       
+      <Flex className='gap-x-5 items-center py-7'>
+        <Button text='Add to Wish List'/>
+       <Button text='Add To Cart'/>
       </Flex>
       </div>
 
