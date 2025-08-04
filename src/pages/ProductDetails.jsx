@@ -111,6 +111,13 @@ const [star5,setStar5]=useState(false);
       </Flex>
       </div>
 
+      <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
+      <Flex className='gap-x-14 items-center py-7'>
+        <SmallList className='!font-extrabold !text-black' text='STATUS'/>
+       <SmallList text='IN STOCK'/>
+      </Flex>
+      </div>
+
 
       
     </Container>
