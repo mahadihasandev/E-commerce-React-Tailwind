@@ -102,7 +102,11 @@ const [star5,setStar5]=useState(false);
       <Flex className='gap-x-[29px] items-center py-7'>
         <SmallList className='!font-extrabold !text-black' text='QUANTITY'/>
         <Flex className='items-center gap-x-4'>
-         <Flex></Flex>
+         <Flex className='w-[139px] h-[36px] border border-[#F0F0F0] justify-evenly items-center'>
+            <div className=''>+</div>
+            <div className=''>1</div>
+            <div className=''>-</div>
+         </Flex>
         </Flex>
       </Flex>
       </div>
