@@ -138,8 +138,13 @@ const [star5,setStar5]=useState(false);
       <Flex className='justify-between items-center py-7'>
         <SmallList className='!font-extrabold !text-black' text='SHIPPING & RETURNS'/>
         <FaPlus />
-
       </Flex>
+      </div>
+
+       <div className='w-1/2 border-[#D8D8D8] border-b py-4'>    
+        <SmallList text=' typically includes several key factors.
+                  structured list you can think of as a "Goodness Quota" for an eCommerce
+                   building or comparing platforms (like Laravel vs MERN), these factors can help you evaluate which one can deliver these features more easily or robustly'/>  
       </div>
 
     </Container>  
