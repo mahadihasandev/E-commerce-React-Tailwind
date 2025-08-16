@@ -141,10 +141,40 @@ const [star5,setStar5]=useState(false);
       </Flex>
       </div>
 
-       <div className='w-1/2 border-[#D8D8D8] border-b py-4'>    
+       <div className='w-1/2 border-[#D8D8D8] pb-[123px] py-4'>    
         <SmallList text=' typically includes several key factors.
                   structured list you can think of as a "Goodness Quota" for an eCommerce
                    building or comparing platforms (like Laravel vs MERN), these factors can help you evaluate which one can deliver these features more easily or robustly'/>  
+      </div>
+
+    <div className='w-full border-[#D8D8D8]  border-b py-4'> 
+        <Flex className='gap-x-10'>
+          <SmallList className='!font-extrabold text-base' text='Description'/>
+          <SmallList className='!font-extrabold !text-black text-base' text='Reviews (1)'/>
+        </Flex>    
+      </div>
+
+      <div className='w-full border-[#D8D8D8] pb-4 border-b py-4'> 
+          <SmallList text='Good product great quality'/>   
+      </div>
+
+      <div className='w-full border-[#D8D8D8] pb-4 border-b py-4'> 
+        <Flex className='gap-x-10 items-center justify-between'>
+          <div className='flex items-center gap-x-10'>
+          <SmallList className='text-black' text='Jhon Ford'/>
+          <Flex className='gap-x-2'>
+        <FaStar onClick={handleStar1} className={star1?'text-[#FFD700]':'text-[#B6B6B6]'}/>
+        <FaStar onClick={handleStar2} className={star2?'text-[#FFD700]':'text-[#B6B6B6]'}/>
+        <FaStar onClick={handleStar3} className={star3?'text-[#FFD700]':'text-[#B6B6B6]'}/>
+        <FaStar onClick={handleStar4} className={star4?'text-[#FFD700]':'text-[#B6B6B6]'}/>
+        <FaStar onClick={handleStar5} className={star5?'text-[#FFD700]':'text-[#B6B6B6]'}/>
+      </Flex>
+      </div>
+      <SmallList text="6 month ago"/>       
+        </Flex> 
+        <SmallList className='pt-4' text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt 
+        assumenda accusamus 
+        tempore tempora illum. Quia architecto facere reprehenderit deleniti! Accusamus."/>
       </div>
 
     </Container>  
