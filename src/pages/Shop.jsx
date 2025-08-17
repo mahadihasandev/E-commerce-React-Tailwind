@@ -1,15 +1,16 @@
-import React from 'react'
-import Navbar from '../layouts/Navbar'
-import Searchbar from '../layouts/Searchbar'
-import Footer from '../layouts/Footer'
+import Container from "../component/Container"
+import Flex from "../component/Flex"
 
 function Shop() {
   return (
   <>
-       
-      <div className='text-5xl font-extrabold'>Shop</div>
-      
-    
+       <section>
+        <Container>
+          <Flex>
+            
+          </Flex>
+        </Container>
+       </section>
     </>
   )
 }
