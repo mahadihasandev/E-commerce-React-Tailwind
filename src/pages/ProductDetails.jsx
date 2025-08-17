@@ -176,6 +176,31 @@ const [star5,setStar5]=useState(false);
         assumenda accusamus 
         tempore tempora illum. Quia architecto facere reprehenderit deleniti! Accusamus."/>
       </div>
+      
+        <div className='w-full border-[#D8D8D8] pt-8 pb-4 py-12'> 
+          <MidList text='Add a Review'/>   
+      </div>
+
+       <div className='w-full border-[#D8D8D8] pt-8 pb-4 border-b py-4'> 
+        <label className='text-black' htmlFor="">Name:
+          <input className='w-full block py-4 border-[#D8D8D8]' type="text" placeholder='Your Name'/>
+          </label>   
+      </div>
+
+       <div className='w-full border-[#D8D8D8] pt-8 pb-4 border-b py-4'> 
+        <label className='text-black' htmlFor="">Email:
+          <input className='w-full block py-4 border-[#D8D8D8] ' type="text" placeholder='Your Email'/>
+          </label>   
+      </div>
+
+      <div className='w-full border-[#D8D8D8] pt-8 pb-20 border-b py-4'> 
+        <label className='text-black' htmlFor="">Review:
+          <input className='w-full block py-4 border-[#D8D8D8]' type="text" 
+          placeholder='Your Review'/>
+          </label>   
+      </div>
+
+      <Button className='mt-8 mb-96' text='Submit Review'/>
 
     </Container>  
     </>
