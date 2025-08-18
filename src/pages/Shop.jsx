@@ -12,7 +12,8 @@ function Shop() {
             
             </div>
             <div className="w-9/12">
-              <Pagination itemsPerPage={4} />
+
+              <Pagination className="flex" itemsPerPage={4} />
             </div>
           </Flex>
         </Container>
