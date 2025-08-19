@@ -21,6 +21,7 @@ import cardImg2 from '../assets/cardImg2.jpg';
 import cardImg3 from '../assets/cardImg3.jpg';
 import cardImg4 from '../assets/cardImg4.jpg';
 import offer from '../assets/offer.png';
+import data from '../data';
 
 
 function Home() {
