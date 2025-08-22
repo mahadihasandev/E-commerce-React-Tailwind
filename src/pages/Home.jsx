@@ -20,6 +20,8 @@ import offer from "../assets/offer.png";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+import NextPrve from "../component/NextPrve";
+import PrveNext from "../component/PrveNext";
 
 
 function Home() {
@@ -30,6 +32,8 @@ function Home() {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows:true,
+    nextArrow:<NextPrve/>,
+    prevArrow:<PrveNext/>
   };
 
   return (
