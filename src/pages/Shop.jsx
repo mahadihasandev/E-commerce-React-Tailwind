@@ -8,7 +8,6 @@ import { useState } from "react";
 function Shop() {
 const [itemShow,setItemShow]=useState(9)
 
-
   let handleSelect=(e)=>{
    setItemShow(e.target.value)
     
@@ -46,8 +45,7 @@ const [itemShow,setItemShow]=useState(9)
                     <option>36</option>
                   </select>
                   </Flex> 
-                  </Flex>
-                            
+                  </Flex>                            
                 </Flex>
               <Pagination itemsPerPage={itemShow}/>
             </div>
