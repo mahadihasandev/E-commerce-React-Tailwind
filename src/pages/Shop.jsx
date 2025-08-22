@@ -13,7 +13,7 @@ function Shop() {
             </div>
             <div className="w-9/12 pt-10">
 
-              <Pagination className='flex' itemsPerPage={9} />
+              <Pagination itemsPerPage={9} />
             </div>
           </Flex>
         </Container>

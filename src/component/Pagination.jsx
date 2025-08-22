@@ -15,8 +15,8 @@ function Items({ currentItems }) {
     <>
       <div className="flex flex-wrap gap-x-[46px]">
         {currentItems &&
-        currentItems.map((item) => (
-          <div>
+        currentItems.map((item,index) => (
+          <div key={index}>
             <Card nameText={item.title} imgsrc={item.image} priceText={item.price} />
           </div>
         ))}
@@ -36,7 +36,7 @@ useEffect(()=>{
   const [itemOffset, setItemOffset] = useState(0);
 
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = allData.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(allData.length / itemsPerPage);
 
@@ -51,16 +51,20 @@ useEffect(()=>{
   return (
     <>
       <Items currentItems={currentItems} />
-      <ReactPaginate
+     <div className='mt-10 mb-10 flex justify-between'>
+       <ReactPaginate
         breakLabel="..."
-        nextLabel="next>"
+        nextLabel=""
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
-        className='flex gap-x-10 pt-10'
+        className='flex gap-x-5 '
+        pageLinkClassName='p-5 border border-[#D8D8D8] hover:bg-black hover:text-white'
         pageCount={pageCount}
-        previousLabel="<previous"
+        previousLabel=""
         renderOnZeroPageCount={null}
       />
+      <h2>{`Products from ${itemOffset+1} to ${endOffset>allData.length?allData.length:endOffset} of ${allData.length}`}</h2>
+     </div>
     </>
   );
 }
