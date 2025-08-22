@@ -15,9 +15,9 @@ function Navbar() {
               <ul className='flex gap-10'>
                 <Link to='/'><List text='Home'/></Link>
                 <Link to='/shop'><List text='Shop'/></Link>
-                <List text='About'/>
-                <List text='Journal'/>
-                <List text='Contact'/>
+                <Link to='/about'><List text='About'/></Link>
+                <Link to='/journal'><List text='Journal'/></Link>
+                <Link to='/contact'><List text='Contact'/></Link>
               </ul>
               </div>
               <div className='w-[22%]'></div>
