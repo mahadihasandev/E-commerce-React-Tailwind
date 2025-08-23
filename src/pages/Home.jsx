@@ -30,7 +30,7 @@ function Home() {
     infinite: true,
     speed: 400,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     arrows:true,
     nextArrow:<NextPrve/>,
     prevArrow:<PrveNext/>
@@ -68,7 +68,9 @@ function Home() {
           </Flex>
         </Container>
       </section>
+
       {/* offer Section */}
+
       <Container>
         <Flex className="gap-x-10 pt-[140px] pb-[128px]">
           <div className="w-1/2">
@@ -90,12 +92,14 @@ function Home() {
       </Container>
 
       {/* New Arrival Section */}
+
       <section className="pb-20">
         <Container>
-          <CommonHeading className="" text="New Arrival" />
+          <CommonHeading className="pb-8" text="New Arrival" />
         </Container>
 
         {/* slack slider */}
+
         <Container>
         <Slider {...settings}>
           <div>
@@ -185,37 +189,102 @@ function Home() {
         </Container>
       </section>
 
+      {/* Best seller section */}
+
       <section className="pb-20">
         <Container>
-          <CommonHeading className="" text="Our BestSellers" />
-          <Flex className="gap-x-10 py-10">
-            <Card
-              imgsrc={cardImg1}
-              nameText="Basic Crew Neck Tee"
-              colorText="Black"
-              priceText="$44.00"
-            />
+          <CommonHeading className="pb-8" text="Our BestSellers" />
+          </Container>
+          <Container>
 
-            <Card
-              imgsrc={cardImg2}
-              nameText="Smart Watch"
-              colorText="Black"
-              priceText="$50.00"
-            />
-            <Card
-              imgsrc={cardImg3}
-              nameText="Basket"
-              colorText="Multi color"
-              priceText="$20.00"
-            />
-            <Card
-              imgsrc={cardImg4}
-              nameText="Doll"
-              colorText="Gray"
-              priceText="$30.00"
-            />
-          </Flex>
+      {/* slack slider2 */}n
+
+        <Slider {...settings}>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg1}
+                nameText="Basic Crew Neck Tee"
+                colorText="Black"
+                priceText="$44.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg2}
+                nameText="Smart Watch"
+                colorText="Black"
+                priceText="$50.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg3}
+                nameText="Basket"
+                colorText="Multi color"
+                priceText="$20.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg4}
+                nameText="Doll"
+                colorText="Gray"
+                priceText="$30.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg1}
+                nameText="Basic Crew Neck Tee"
+                colorText="Black"
+                priceText="$44.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg2}
+                nameText="Smart Watch"
+                colorText="Black"
+                priceText="$50.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg3}
+                nameText="Basket"
+                colorText="Multi color"
+                priceText="$20.00"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Card
+                imgsrc={cardImg4}
+                nameText="Doll"
+                colorText="Gray"
+                priceText="$30.00"
+              />
+            </Link>
+          </div>
+        </Slider>
         </Container>
+          
+          
+        
       </section>
 
       <section className="pb-20">
