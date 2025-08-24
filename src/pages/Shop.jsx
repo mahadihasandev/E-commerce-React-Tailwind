@@ -4,6 +4,9 @@ import Pagination from "../component/Pagination"
 import { GrAppsRounded } from "react-icons/gr";
 import { FaListUl } from "react-icons/fa6";
 import { useState } from "react";
+import MidList from "../component/MidList";
+import Catagory from "../component/Catagory";
+
 
 function Shop() {
 const [itemShow,setItemShow]=useState(9)
@@ -17,9 +20,15 @@ const [itemShow,setItemShow]=useState(9)
        <section>
         <Container >
           <Flex >
-            <div className="w-3/12">
-           
+
+            {/* Shop by Catagory section */}
+
+            <div className="w-3/12 pr-10">
+           <MidList className='mt-4 mb-10' text='Shop by Catagory'/>
+           <Catagory/>
             </div>
+
+
             <div className="w-9/12 ">
                 <Flex className="justify-between mt-5 mb-5">
                   <Flex className='gap-x-3'>

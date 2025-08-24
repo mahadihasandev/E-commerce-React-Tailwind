@@ -25,8 +25,10 @@ import PrveNext from "../component/PrveNext";
 
 
 function Home() {
+
+  // Slick slider settings
+
   var settings = {
-    
     infinite: true,
     speed: 400,
     slidesToShow: 4,
@@ -36,15 +38,43 @@ function Home() {
     prevArrow:<PrveNext/>
   };
 
+  var settingsBanner = {
+    infinite: true,
+    speed: 400,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows:true,
+    nextArrow:<NextPrve/>,
+    prevArrow:<PrveNext/>
+  };
+
   return (
     <div>
+
       {/* Banner Image */}
-
-      <Link to="/#">
-        <Image className="w-full" src={BannerImg} />
-      </Link>
-
+       
+        <Slider {...settingsBanner}>
+          <div>
+            <Link to="/#">
+              <Image className="w-full" src={BannerImg} />
+             </Link>
+          </div>
+          <div>
+            <Link to="">
+              <Link to="/#">
+              <Image className="w-full" src={BannerImg} />
+             </Link>
+            </Link>
+          </div>
+          <div>
+            <Link to="/#">
+              <Image className="w-full" src={BannerImg} />
+             </Link>
+          </div>
+        </Slider>
+       
       {/* Info Section */}
+      
       <section className="border-b-[1px] border-[#F0F0F0]">
         <Container>
           <Flex className="py-8 justify-between">
@@ -197,7 +227,7 @@ function Home() {
           </Container>
           <Container>
 
-      {/* slack slider2 */}n
+      {/* slack slider2 */}
 
         <Slider {...settings}>
           <div>
