@@ -5,11 +5,7 @@ import Card from './Card';
 import data from '../data';
 
 
-
-
-
 function Items({ currentItems }) {
-
 
   return (
     <>
