@@ -43,7 +43,8 @@ const [showsubcatagorythree,setShowsubcatagorythree]=useState(false)
             <div className="w-3/12 pr-10">
            <MidList className='mt-4 mb-10' text='Shop by Catagory'/>
            <div onClick={handleCatagoryone}>
-            <Catagory type='plus' catagoryText='Catagory 1'/>
+            <Catagory type='plus' plusicon={showsubcatagoryone} catagoryText='Catagory 1'/>
+            </div>
               {showsubcatagoryone&&<div className="bg-lightGray rounded-md px-5">
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
@@ -51,10 +52,11 @@ const [showsubcatagorythree,setShowsubcatagorythree]=useState(false)
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
             </div>}
             
-           </div>
-           <Catagory catagoryText='Catagory 1'/>
+           <Catagory catagoryText='Catagory 2'/>
+           
            <div onClick={handleCatagorytwo}>
-            <Catagory type='plus' catagoryText='Catagory 1'/>
+            <Catagory type='plus' plusicon={showsubcatagorytwo} catagoryText='Catagory 1'/>
+            </div>
               {showsubcatagorytwo&&<div className="bg-lightGray rounded-md px-5">
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
@@ -62,10 +64,12 @@ const [showsubcatagorythree,setShowsubcatagorythree]=useState(false)
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
             </div>}
             
-           </div>
-           <Catagory catagoryText='Catagory 1'/>
+           
+           <Catagory catagoryText='Catagory 2'/>
+
            <div onClick={handleCatagorythree}>
-            <Catagory type='plus' catagoryText='Catagory 1'/>
+            <Catagory type='plus' plusicon={showsubcatagorythree} catagoryText='Catagory 1'/>
+            </div>
               {showsubcatagorythree&&<div className="bg-lightGray rounded-md px-5">
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Headphone'/>
@@ -73,7 +77,7 @@ const [showsubcatagorythree,setShowsubcatagorythree]=useState(false)
               <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
             </div>}
             
-           </div>
+           
             </div>
 
 
