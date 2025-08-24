@@ -20,6 +20,7 @@ import offer from "../assets/offer.png";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+
 import NextPrve from "../component/NextPrve";
 import PrveNext from "../component/PrveNext";
 
@@ -35,7 +36,7 @@ function Home() {
     slidesToScroll: 2,
     arrows:true,
     nextArrow:<NextPrve/>,
-    prevArrow:<PrveNext/>
+    prevArrow:<PrveNext/>,
   };
 
   var settingsBanner = {
@@ -44,8 +45,10 @@ function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows:true,
-    nextArrow:<NextPrve/>,
-    prevArrow:<PrveNext/>
+    autoplay:true,
+    autoplaySpeed:3000,
+   nextArrow:<NextPrve/>,
+    prevArrow:<PrveNext/>,
   };
 
   return (

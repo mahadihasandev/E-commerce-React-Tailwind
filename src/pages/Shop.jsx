@@ -10,7 +10,24 @@ import Catagory from "../component/Catagory";
 
 function Shop() {
 const [itemShow,setItemShow]=useState(9)
+const [showsubcatagoryone,setShowsubcatagoryone]=useState(false)
+const [showsubcatagorytwo,setShowsubcatagorytwo]=useState(false)
+const [showsubcatagorythree,setShowsubcatagorythree]=useState(false)
 
+//Catagory expand
+  let handleCatagoryone=()=>{
+    setShowsubcatagoryone(!showsubcatagoryone)
+  }
+
+  let handleCatagorytwo=()=>{
+    setShowsubcatagorytwo(!showsubcatagorytwo)
+  }
+
+  let handleCatagorythree=()=>{
+    setShowsubcatagorythree(!showsubcatagorythree)
+  }
+
+  //show menu 
   let handleSelect=(e)=>{
    setItemShow(e.target.value)
     
@@ -25,7 +42,38 @@ const [itemShow,setItemShow]=useState(9)
 
             <div className="w-3/12 pr-10">
            <MidList className='mt-4 mb-10' text='Shop by Catagory'/>
-           <Catagory/>
+           <div onClick={handleCatagoryone}>
+            <Catagory type='plus' catagoryText='Catagory 1'/>
+              {showsubcatagoryone&&<div className="bg-lightGray rounded-md px-5">
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Headphone'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
+            </div>}
+            
+           </div>
+           <Catagory catagoryText='Catagory 1'/>
+           <div onClick={handleCatagorytwo}>
+            <Catagory type='plus' catagoryText='Catagory 1'/>
+              {showsubcatagorytwo&&<div className="bg-lightGray rounded-md px-5">
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Headphone'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
+            </div>}
+            
+           </div>
+           <Catagory catagoryText='Catagory 1'/>
+           <div onClick={handleCatagorythree}>
+            <Catagory type='plus' catagoryText='Catagory 1'/>
+              {showsubcatagorythree&&<div className="bg-lightGray rounded-md px-5">
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Headphone'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
+              <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
+            </div>}
+            
+           </div>
             </div>
 
 
