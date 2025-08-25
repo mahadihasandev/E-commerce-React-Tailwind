@@ -6,6 +6,6 @@ import BreadCrumbSlice from './Slices/BreadCrumbSlice'
 export default configureStore({
   reducer: {
     sitedata:dataSlice,
-    breadCrumb:BreadCrumbSlice,
+    breadCrumbs:BreadCrumbSlice,
   }
 })

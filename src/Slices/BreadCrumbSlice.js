@@ -8,8 +8,8 @@ export const breadCrumbSlice = createSlice({
   },
   reducers: {
     breadCrumb: (state,action) => {
-     console.log(state.currentValue);
-     console.log(state.previousValue);
+     state.currentValue=action.payload
+     
      
      
     },
