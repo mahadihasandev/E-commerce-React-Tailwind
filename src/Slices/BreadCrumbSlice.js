@@ -3,13 +3,14 @@ import { createSlice } from '@reduxjs/toolkit'
 export const breadCrumbSlice = createSlice({
   name: 'breadcrumb',
   initialState: {
-    currentValue: '',
+    currentValue:"",
     previousValue:"",
   },
   reducers: {
     breadCrumb: (state,action) => {
-      
-     console.log(state);
+     console.log(state.currentValue);
+     console.log(state.previousValue);
+     
      
     },
    
@@ -17,6 +18,6 @@ export const breadCrumbSlice = createSlice({
 })
 
 
-export const { reduxdataslice } = breadCrumbSlice.actions
+export const { breadCrumb } = breadCrumbSlice.actions
 
 export default breadCrumbSlice.reducer

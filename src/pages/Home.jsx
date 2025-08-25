@@ -23,15 +23,12 @@ import "slick-carousel/slick/slick.css";
 
 import NextPrve from "../component/NextPrve";
 import PrveNext from "../component/PrveNext";
-import data from "../data";
-import { useDispatch } from "react-redux";
-import { reduxdataslice } from "../Slices/dataSlice";
+
 
 
 function Home() {
 
-  let dispatch=useDispatch()
-  dispatch(reduxdataslice(data))
+
 
   // Slick slider settings
 
