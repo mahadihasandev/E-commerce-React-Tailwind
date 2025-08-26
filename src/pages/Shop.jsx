@@ -6,6 +6,7 @@ import { FaListUl } from "react-icons/fa6";
 import { useState } from "react";
 import MidList from "../component/MidList";
 import Catagory from "../component/Catagory";
+import BreadsCrumbs from "../component/BreadsCrumbs";
 
 
 function Shop() {
@@ -36,6 +37,7 @@ const [showsubcatagorythree,setShowsubcatagorythree]=useState(false)
   <>
        <section>
         <Container >
+          <BreadsCrumbs page='Shop'/>
           <Flex >
 
             {/* Shop by Catagory section */}

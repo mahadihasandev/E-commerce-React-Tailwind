@@ -11,6 +11,7 @@ import MidList from '../component/MidList';
 import SmallList from '../component/SmallList'
 import { FaPlus, FaStar } from "react-icons/fa6";
 import Button from '../component/Button';
+import BreadsCrumbs from '../component/BreadsCrumbs';
 
 function ProductDetails() {
 const [star1,setStar1]=useState(false);
@@ -51,6 +52,7 @@ const [star5,setStar5]=useState(false);
   return (
     <>
     <Container>
+      <BreadsCrumbs/>
       <Flex className="flex-wrap gap-10">
         <Image src={ProductOne}/>
         <Image src={ProductTwo}/>
