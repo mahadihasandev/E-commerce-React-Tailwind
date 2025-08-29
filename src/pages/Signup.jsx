@@ -10,15 +10,25 @@ import axios from 'axios';
 
 const Signup = () => {
   const [apiData, setApiData] = useState([]);
-  console.log(apiData);
+  const [storeCountry,setStoreCountry]=useState('')
+  console.log(storeCountry);
+  
 
  useEffect(()=>{
   async function ApiCall() {
-    let data=await axios.get('https://restcountries.com/v3.1/all?fields=name')
+    let data=await axios.get('https://restcountries.com/v3.1/all?fields=name,capital')
     setApiData(data.data);  
   }
   ApiCall()
  },[])
+
+let handleDivision=(e)=>{
+  if(e.target.value!='Select Country'){
+    setStoreCountry(e.target.value)
+  }
+
+
+}
 
  
 
@@ -88,14 +98,27 @@ const Signup = () => {
           <Input className='w-[400px]' text='Post Code' type='number' check='post-code' placeholder=
             '05228' />
         </Flex>
-        <Flex className='w-w49 gap-x-5 pb-10'>
-          <select>{
+        <Flex className='gap-x-32 mt-16 mb-10'>
+
+          <select onChange={handleDivision}>
+            <option>Select Country</option>
+            {
             apiData.map((country, index) => (
-              <option key={index} value={country.name.common}>{country.name.common}</option>
+              <option key={index}>{country.name.common}</option>
             ))
-          }</select>
-          <Input className='w-[400px]' text='Region/State' type='text' check='last-text' placeholder=
-            'Please select' />
+            }
+          </select>
+
+          <select className='w-[300px]'>
+            <option >Select City</option>
+            {
+              apiData.map((country,index)=>(
+                <option key={index}>
+                  {country.name.common===storeCountry&&country.capital.map((capital)=>(capital))}
+                  </option>
+              ))
+            }
+          </select>
         </Flex><hr className='text-third' />
 
 
