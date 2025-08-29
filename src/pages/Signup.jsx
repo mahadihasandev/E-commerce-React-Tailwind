@@ -4,12 +4,21 @@ import Flex from '../component/Flex'
 import { IoIosArrowForward } from "react-icons/io";
 import Input from '../component/Input';
 import Button from '../component/Button';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 const Signup = () => {
-  
+  const [apiData, setApiData] = useState([]);
+  console.log(apiData);
 
- 
+ useEffect(()=>{
+  async function ApiCall() {
+    let data=await axios.get('https://restcountries.com/v3.1/all?fields=name')
+    setApiData(data.data);  
+  }
+  ApiCall()
+ },[])
 
  
 
@@ -20,12 +29,12 @@ const Signup = () => {
       <Container>
         <MidList text='Sign Up'/>
         <Flex className='items-center gap-x-2 pb-[136px]'>
-          <p className='text-sm text-primary font-normal font-san'>Home</p>
-          <span className='text-sm text-primary font-normal font-san'><IoIosArrowForward /></span>
-          <p className='text-sm text-primary font-normal font-san'>Sign up</p>
+          <p className='text-sm text-primary font-normal font-DMs'>Home</p>
+          <span className='text-sm text-primary font-normal font-DMs'><IoIosArrowForward /></span>
+          <p className='text-sm text-primary font-normal font-DMs'>Sign up</p>
         </Flex>
-        <p className='w-[644px] text-base text-primary font-normal font-san leading-7 pb-10 '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p> <hr className='text-third' />
-        <h4 className=' text-[39px] text-secondary font-bold font-san pt-15 pb-10'>Your Personal Details</h4>
+        <p className='w-[644px] text-base text-primary font-normal font-DMs leading-7 pb-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p> <hr className='text-third' />
+        <h4 className=' text-[39px] text-secondary font-bold font-DMs pt-15 pb-10'>Your Personal Details</h4>
         <Flex className='w-w49 gap-x-5'>
 
 
@@ -43,21 +52,20 @@ const Signup = () => {
           {/* take email */}
 
           <div className='pt-6'>
-            <label className='text-base text-second font-bold font-san leading-6' htmlFor='email'>Email: <br />
+            <label className='text-base text-second font-bold font-DMs leading-6' htmlFor='email'>Email: <br />
               <input id='email' type='email' className={`w-[400px] text-base font-normal py-4 px-2 border-b-2 border-third placeholder:text-sm placeholder:text-first placeholder:font-normal`} placeholder='Enter Email' /> <br />
             </label>
           </div>
           {/* take email */}
 
-          <Input className='w-[400px]' text='Telephone' type='number' check='number' placeholder=
-            'Your phone number' />
+          <Input className='w-[400px]' text='Telephone' type='number' check='number' placeholder='Your phone number' />
         </Flex>
 
         <h4 className=' text-[39px] text-secondary font-bold font-san pt-15 pb-10'>Your Password</h4>
         <Flex className='w-w49 gap-x-5 pb-10'>
           {/* take password */}
           <div className='pt-6'>
-            <label className='text-base text-second font-bold font-san leading-6' htmlFor='password'>Password: <br />
+            <label className='text-base text-second font-bold font-DMs leading-6' htmlFor='password'>Password: <br />
               <input id='password' type='password' className={`w-[400px] text-base font-normal py-4 px-2 border-b-2 border-third placeholder:text-sm placeholder:text-first placeholder:font-normal`} placeholder='Enter Password' /> <br />
             </label>
           </div>
@@ -67,7 +75,7 @@ const Signup = () => {
         </Flex><hr className='text-third' />
 
         <hr className='text-third' />
-        <h4 className=' text-[39px] text-secondary font-bold font-san pt-15 pb-10'>New Customer</h4>
+        <h4 className=' text-[39px] text-secondary font-bold font-DMs pt-15 pb-10'>New Customer</h4>
         <Flex className='w-w49 gap-x-5'>
           <Input className='w-[400px]' text='Address 1' type='text' check='address1' placeholder=
             '4279 Zboncak Port Suite 6212' />
@@ -81,8 +89,11 @@ const Signup = () => {
             '05228' />
         </Flex>
         <Flex className='w-w49 gap-x-5 pb-10'>
-          <Input className='w-[400px]' text='Country' type='text' check='text' placeholder=
-            'Please select' />
+          <select>{
+            apiData.map((country, index) => (
+              <option key={index} value={country.name.common}>{country.name.common}</option>
+            ))
+          }</select>
           <Input className='w-[400px]' text='Region/State' type='text' check='last-text' placeholder=
             'Please select' />
         </Flex><hr className='text-third' />
