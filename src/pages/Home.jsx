@@ -17,18 +17,26 @@ import cardImg2 from "../assets/cardImg2.jpg";
 import cardImg3 from "../assets/cardImg3.jpg";
 import cardImg4 from "../assets/cardImg4.jpg";
 import offer from "../assets/offer.png";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
 import NextPrve from "../component/NextPrve";
 import PrveNext from "../component/PrveNext";
+import axios from "axios";
 
 
 
 function Home() {
+const [allData,setAllData]=useState([])
 
-
+ useEffect(()=>{
+    async function apiData(){
+      let data=await axios.get('https://dummyjson.com/products')
+      setAllData(data.data.products)
+    }
+    apiData()
+  },[])
 
   // Slick slider settings
 
@@ -138,86 +146,21 @@ function Home() {
 
         <Container>
         <Slider {...settings}>
-          <div>
+        {
+          allData.map((item)=>(
+               <div>
             <Link to="">
               <Card
-                imgsrc={cardImg1}
-                nameText="Basic Crew Neck Tee"
+                src={item.thumbnail}
+                nameText={item.title}
                 colorText="Black"
-                priceText="$44.00"
+                priceText={item.price}
               />
             </Link>
           </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg2}
-                nameText="Smart Watch"
-                colorText="Black"
-                priceText="$50.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg3}
-                nameText="Basket"
-                colorText="Multi color"
-                priceText="$20.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg4}
-                nameText="Doll"
-                colorText="Gray"
-                priceText="$30.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg1}
-                nameText="Basic Crew Neck Tee"
-                colorText="Black"
-                priceText="$44.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg2}
-                nameText="Smart Watch"
-                colorText="Black"
-                priceText="$50.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg3}
-                nameText="Basket"
-                colorText="Multi color"
-                priceText="$20.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg4}
-                nameText="Doll"
-                colorText="Gray"
-                priceText="$30.00"
-              />
-            </Link>
-          </div>
+          ))
+        }
+         
         </Slider>
         </Container>
         <Container>
@@ -236,86 +179,20 @@ function Home() {
       {/* slack slider2 */}
 
         <Slider {...settings}>
-          <div>
+
+           {
+          allData.map((item)=>(
+               <div>
             <Link to="">
               <Card
-                imgsrc={cardImg1}
-                nameText="Basic Crew Neck Tee"
-                colorText="Black"
-                priceText="$44.00"
+                src={item.thumbnail}
+                nameText={item.title}
+                colorText="Black" priceText={item.price}
               />
             </Link>
           </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg2}
-                nameText="Smart Watch"
-                colorText="Black"
-                priceText="$50.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg3}
-                nameText="Basket"
-                colorText="Multi color"
-                priceText="$20.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg4}
-                nameText="Doll"
-                colorText="Gray"
-                priceText="$30.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg1}
-                nameText="Basic Crew Neck Tee"
-                colorText="Black"
-                priceText="$44.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg2}
-                nameText="Smart Watch"
-                colorText="Black"
-                priceText="$50.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg3}
-                nameText="Basket"
-                colorText="Multi color"
-                priceText="$20.00"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="">
-              <Card
-                imgsrc={cardImg4}
-                nameText="Doll"
-                colorText="Gray"
-                priceText="$30.00"
-              />
-            </Link>
-          </div>
+          ))
+        }
         </Slider>
         </Container>
           
@@ -334,26 +211,26 @@ function Home() {
           <CommonHeading className="" text="Special Offers" />
           <Flex className="gap-x-10 py-10">
             <Card
-              imgsrc={cardImg1}
+              src={cardImg1}
               nameText="Basic Crew Neck Tee"
               colorText="Black"
               priceText="$44.00"
             />
 
             <Card
-              imgsrc={cardImg2}
+              src={cardImg2}
               nameText="Smart Watch"
               colorText="Black"
               priceText="$50.00"
             />
             <Card
-              imgsrc={cardImg3}
+              src={cardImg3}
               nameText="Basket"
               colorText="Multi color"
               priceText="$20.00"
             />
             <Card
-              imgsrc={cardImg4}
+              src={cardImg4}
               nameText="Doll"
               colorText="Gray"
               priceText="$30.00"

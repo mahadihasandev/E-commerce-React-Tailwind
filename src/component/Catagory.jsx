@@ -1,15 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
 import { FaCircleMinus } from "react-icons/fa6";
 import Flex from './Flex'
 import SmallList from './SmallList'
+import axios from 'axios';
 
 
 
 function Catagory({className,catagoryText,type,textClass,plusicon}) {
-
-
-  
 
 
   return (

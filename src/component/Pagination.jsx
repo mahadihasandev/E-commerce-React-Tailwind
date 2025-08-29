@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import Card from './Card';
 import data from '../data';
+import axios from 'axios';
 
 
 function Items({ currentItems }) {
@@ -13,7 +14,7 @@ function Items({ currentItems }) {
         {currentItems &&
         currentItems.map((item,index) => (
           <div key={index}>
-            <Card nameText={item.title} imgsrc={item.image} priceText={item.price} />
+            <Card nameText={item.title} src={item.thumbnail} priceText={item.price} />
           </div>
         ))}
       </div>
@@ -24,10 +25,17 @@ function Items({ currentItems }) {
 function Pagination({ itemsPerPage }) {
 
 const [allData,setAlldata]=useState([])
+console.log(allData);
 
-useEffect(()=>{
-  setAlldata(data)
-},[])
+
+  useEffect(()=>{
+    async function apiData(){
+      let data=await axios.get('https://dummyjson.com/products')
+      setAlldata(data.data.products)
+    }
+    apiData()
+  },[])
+
 
   const [itemOffset, setItemOffset] = useState(0);
 
