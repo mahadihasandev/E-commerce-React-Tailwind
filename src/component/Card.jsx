@@ -15,7 +15,12 @@ function Card({src,className,nameText,priceText,colorText}) {
   let dispatch=useDispatch()
 
   let handleAddToCart=()=>{
-    dispatch(addtocart(2))  
+    dispatch(addtocart({
+      title:nameText,
+      price:priceText,
+      image:src,
+      quantity:1,
+    }))  
   }
 
   return (
