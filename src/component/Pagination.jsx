@@ -25,7 +25,6 @@ function Items({ currentItems }) {
 function Pagination({ itemsPerPage }) {
 
 const [allData,setAlldata]=useState([])
-console.log(allData);
 
 
   useEffect(()=>{

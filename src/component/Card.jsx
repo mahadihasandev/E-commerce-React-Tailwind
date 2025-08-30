@@ -6,9 +6,18 @@ import SmallList from './SmallList';
 import { FaHeart } from "react-icons/fa";
 import { FaSync } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import {addtocart} from '../Slices/AddToCartSlice'
 
 
 function Card({src,className,nameText,priceText,colorText}) {
+
+  let dispatch=useDispatch()
+
+  let handleAddToCart=()=>{
+    dispatch(addtocart(2))  
+  }
+
   return (
     <>
     <div className={`w-[370px] h-[465px] relative group ${className}`}>
@@ -29,10 +38,12 @@ function Card({src,className,nameText,priceText,colorText}) {
               <FaSync />
           </Flex>
 
+            <div onClick={handleAddToCart} >
           <Flex className='items-center gap-x-[15px]'>
             <MidList className='text-base' text='Add to Cart'/>
             <FaShoppingCart />
           </Flex>
+          </div>
             
           </Flex>
           

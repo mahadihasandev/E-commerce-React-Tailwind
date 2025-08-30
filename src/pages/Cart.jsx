@@ -13,7 +13,7 @@ function Cart() {
       <Container className='mb-16'>
       <BreadsCrumbs page='Cart'/>
         <div>
-          <Flex className='bg-lightGray w-full px-10 py-[34px] gap-x-[340px]'>
+          <Flex className='bg-lightGray w-full px-10 py-[34px] justify-between items-center'>
             <h4 className='font-DMs text-deepDark font-bold 
             text-base'>Product</h4>
             <h4 className='font-DMs text-deepDark font-bold 
@@ -21,7 +21,7 @@ function Cart() {
             <h4 className='font-DMs text-deepDark font-bold 
             text-base'>Product</h4>
             <h4 className='font-DMs text-deepDark font-bold 
-            text-base'>Product</h4>
+            text-base pr-[20%]'>Product</h4>
           </Flex>
 
            <Flex className='justify-center items-center font-DM font-bold border-[0.6px] border-[#ebeaea]'>
