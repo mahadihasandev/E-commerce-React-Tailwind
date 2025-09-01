@@ -1,13 +1,11 @@
-import React from 'react'
+
 import MidList from './MidList'
-import SmallList from './SmallList'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function BreadsCrumbs({className,page}) {
 
     let crumbs=useSelector((state)=>(state.breadCrumbs))
-    
     
   return (
     <div className={` ${className}`}>

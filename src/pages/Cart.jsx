@@ -7,7 +7,10 @@ import { FaMinus, FaPlus } from 'react-icons/fa6'
 import Image from '../component/Image'
 import Button from '../component/Button'
 
+   
+
 function Cart() {
+    let cartItem=useSelector(state=>console.log(state.addToCart))
   return (
     <div>
       <Container className='mb-16'>
