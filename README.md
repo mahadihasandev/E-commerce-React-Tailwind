@@ -1,12 +1,35 @@
-# React + Vite
+# E-Commerce React (Vite + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal e-commerce demo built with React, Vite, Tailwind CSS and Redux Toolkit. Includes product listing, pagination, cart, breadcrumbs and a simple store structure.
 
-Currently, two official plugins are available:
+Key files
+- [package.json](package.json) — scripts and deps.
+- [src/main.jsx](src/main.jsx) — app entry.
+- [src/App.jsx](src/App.jsx) — routes.
+- [src/Store.js](src/Store.js) — Redux store.
+- [src/data.js](src/data.js) — local demo products.
+- [src/Slices/AddToCartSlice.js](src/Slices/AddToCartSlice.js) — cart logic (action: [`addtocart`](src/Slices/AddToCartSlice.js)).
+- [src/Slices/BreadCrumbSlice.js](src/Slices/BreadCrumbSlice.js) — breadcrumb state (action: [`breadCrumb`](src/Slices/BreadCrumbSlice.js)).
+- [src/component/Pagination.jsx](src/component/Pagination.jsx) — client-side pagination component.
+- [src/pages/Shop.jsx](src/pages/Shop.jsx) — shop UI using pagination.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Quick start
+1. Install
+   npm install
 
-## Expanding the ESLint configuration
+2. Run dev server
+   npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Build for production
+   npm run build
+
+4. Preview build
+   npm run preview
+
+Notes
+- UI uses Tailwind config: [tailwind.config.js](tailwind.config.js).
+- Carousel uses `react-slick` and `slick-carousel`.
+- API demo calls use axios to fetch placeholder products (`dummyjson.com`) in components like [src/pages/Home.jsx](src/pages/Home.jsx) and [src/component/Pagination.jsx](src/component/Pagination.jsx).
+
+License
+- Project is a demo template. Modify as

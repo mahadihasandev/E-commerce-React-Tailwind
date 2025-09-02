@@ -7,7 +7,7 @@ import { FaUser } from "react-icons/fa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ImCross } from 'react-icons/im';
 import Button from '../component/Button';
 import { Link } from 'react-router-dom';
@@ -19,8 +19,13 @@ import MidList from '../component/MidList'
 
 
 function Searchbar() {
+
 let cartItem=useSelector(state=>state.addToCart.cartItem)
+
 const [showcart,setShowCart]=useState(false)
+const [total,setTotal]=useState(0)
+console.log(total);
+
    let dispatch=useDispatch()
 let handleDecrement=(item)=>{
 dispatch(decrement(item))
@@ -33,6 +38,17 @@ let handleIncrement=(item)=>{
   
   
 }
+
+useEffect(()=>{
+  let Total=0;
+  cartItem.map((item)=>{
+  Total+=item.price*item.quantity
+    
+    
+  })
+  setTotal( Total)
+},[cartItem])
+
 let handleCart=()=>{
   setShowCart(true)
   
