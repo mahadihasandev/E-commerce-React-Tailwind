@@ -13,7 +13,10 @@ import Button from '../component/Button';
 import { Link } from 'react-router-dom';
 import { RxButton } from 'react-icons/rx';
 import { PiMinus, PiPlus } from 'react-icons/pi';
-import {increment,decrement} from '../Slices/AddToCartSlice'
+import { IoMdCloseCircle, IoMdCloseCircleOutline } from "react-icons/io";
+import {increment,decrement,remove} from '../Slices/AddToCartSlice'
+import MidList from '../component/MidList'
+
 
 function Searchbar() {
 let cartItem=useSelector(state=>state.addToCart.cartItem)
@@ -64,7 +67,7 @@ let handleCart=()=>{
                         </div>
                 </Flex>
                 {
-              showcart && <div className='w-1/3 h-screen rounded-2xl bg-deepDark absolute top-0 right-0 z-20'>
+              showcart && <div className='w-1/3 pb-20 rounded-2xl bg-deepDark absolute top-0 right-0 z-20'>
                 <ImCross className='text-white my-4 mx-6' onClick={() => setShowCart(!showcart)} />
                        <ul className='flex items-center justify-between px-5 py-5 bg-deepDark text-white text-xl font-semibold border border-white'>
                   <li>Action:</li>
@@ -86,9 +89,11 @@ let handleCart=()=>{
                           </ul>
 
 
-                  {
+                  {     cartItem.length>0
+                        ?  
                         cartItem.map((item)=>(
                           <ul className='flex items-center justify-between px-5 py-3 bg-black text-white border border-white cursor-pointer'>
+                          <li><IoMdCloseCircle onClick={()=>{dispatch(remove(item))}} className='text-red-700 text-2xl'/></li>
                           <li className='text-white'>{item.title}</li>
                           <li className='text-white'>{item.price}</li>
                           <li className='text-white flex items-center gap-x-3 py-1 px-5 border border-white'>
@@ -100,30 +105,20 @@ let handleCart=()=>{
                           <li>{item.price*item.quantity}</li>
                           </ul>
                         ))
+                        :
+                        <MidList className='text-white text-center pt-10' text='Cart is Empty'/>
                   }
 
-               
-              
-
+                  <MidList className='text-white text-end pt-10 pr-10' text={`Total:`}/>
                     <>
-                      
-                        
-                          
-                        
-                      
                       <div className=" flex items-center mt-20 justify-center gap-x-4">
-                        <Link to='/cart'><Button className='bg-white !text-black hover:!text-white hover:!border-white' text="View Cart" /></Link>
-                        <Link to='/checkout'><Button className='bg-white !text-black hover:!text-white hover:!border-white' text="Checkout" /></Link>
+                        
+                        <Link to='/cart'><Button className='bg-white rounded-xl !text-black hover:!text-white hover:!border-white' text="View Cart" /></Link>
+                        <Link to='/checkout'><Button className='bg-white rounded-xl !text-black hover:!text-white hover:!border-white' text="Checkout" /></Link>
 
                       </div>
                     </>
-
-                    
-                    <h1 className='text-white text-2xl font-bold font-dm text-center pt-[200px]'>Cart is Empty</h1>
-
-                
                 <div className='absolute bottom-6 right-6 text-white text-2xl font-dm font-bold'>Total :</div>
-
               </div>
 
             }
