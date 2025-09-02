@@ -48,6 +48,15 @@ const [allData,setAllData]=useState([])
     arrows:true,
     nextArrow:<NextPrve/>,
     prevArrow:<PrveNext/>,
+     responsive: [
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          
+        },
+      },],
   };
 
   var settingsBanner = {
@@ -118,7 +127,7 @@ const [allData,setAllData]=useState([])
       <Container>
         <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
-            <div className="w-[320px] h-[320px] md:w-[780px] md:h-[780px]">
+            <div className="w-[356px] h-[356px] md:w-[780px] md:h-[780px]">
               <Image className="w-full" src={Add1} />
             </div>
           </div>
@@ -151,6 +160,7 @@ const [allData,setAllData]=useState([])
                <div>
             <Link to="">
               <Card
+              
                 src={item.thumbnail}
                 nameText={item.title}
                 colorText="Black"
