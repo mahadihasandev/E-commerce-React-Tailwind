@@ -146,7 +146,7 @@ const [allData,setAllData]=useState([])
 
       {/* New Arrival Section */}
 
-      <section className="pb-20">
+      <section className="md:pb-20">
         <Container>
           <CommonHeading className="px-2 md:px-0 md:pb-8" text="New Arrival" />
         </Container>
@@ -173,14 +173,12 @@ const [allData,setAllData]=useState([])
          
         </Slider>
         </Container>
-        <Container>
-          <Flex className="gap-x-10 py-10"></Flex>
-        </Container>
+        
       </section>
 
       {/* Best seller section */}
 
-      <section className="pb-20">
+      <section className="md:pb-20">
         <Container>
           <CommonHeading className="pb-8" text="Our BestSellers" />
           </Container>
