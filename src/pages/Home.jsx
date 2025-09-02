@@ -66,11 +66,11 @@ const [allData,setAllData]=useState([])
     <div>
 
       {/* Banner Image */}
-       
+       <div>
         <Slider {...settingsBanner}>
-          <div>
+          <div className="">
             <Link to="/#">
-              <Image className="w-full" src={BannerImg} />
+              <Image className=" w-full" src={BannerImg} />
              </Link>
           </div>
           <div>
@@ -86,27 +86,27 @@ const [allData,setAllData]=useState([])
              </Link>
           </div>
         </Slider>
-       
+       </div>
       {/* Info Section */}
       
       <section className="border-b-[1px] border-[#F0F0F0]">
         <Container>
-          <Flex className="py-8 justify-between">
-            <Flex className="gap-x-8 items-center">
+          <Flex className="py-8 px-2 md:px-0 justify-between">
+            <Flex className="gap-x-2 md:gap-x-8 items-center">
               <Fa2 className="text-sm" />
-              <SmallList text="Two years warranty" className="text-base" />
+              <SmallList text="Two years warranty" className="text-[12px] md:text-base" />
             </Flex>
 
-            <Flex className="gap-x-8 items-center">
+            <Flex className="gap-x-2 md:gap-x-8 items-center">
               <FaTruck className="text-base" />
-              <SmallList text="Free shipping" className="text-base" />
+              <SmallList text="Free shipping" className="text-[12px] md:text-base" />
             </Flex>
 
-            <Flex className="gap-x-8 items-center">
+            <Flex className="gap-x-2 md:gap-x-8 items-center">
               <GiReturnArrow className="text-base" />
               <SmallList
                 text="Return policy in 30 days"
-                className="text-base"
+                className="text-[12px] md:text-base"
               />
             </Flex>
           </Flex>
@@ -116,13 +116,13 @@ const [allData,setAllData]=useState([])
       {/* offer Section */}
 
       <Container>
-        <Flex className="gap-x-10 pt-[140px] pb-[128px]">
+        <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
-            <div className="w-[780px] h-[780px]">
+            <div className="w-[320px] h-[320px] md:w-[780px] md:h-[780px]">
               <Image className="w-full" src={Add1} />
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="hidden md:block w-1/2 ">
             <Flex className="flex-col gap-y-10">
               <div className="w-[784px] h-[370px]">
                 <Image className="w-full" src={Add2} />
@@ -139,7 +139,7 @@ const [allData,setAllData]=useState([])
 
       <section className="pb-20">
         <Container>
-          <CommonHeading className="pb-8" text="New Arrival" />
+          <CommonHeading className="px-2 md:px-0 md:pb-8" text="New Arrival" />
         </Container>
 
         {/* slack slider */}
