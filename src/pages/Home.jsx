@@ -127,7 +127,7 @@ const [allData,setAllData]=useState([])
       <Container>
         <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
-            <div className="w-[356px] h-[356px] md:w-[780px] md:h-[780px]">
+            <div className="w-[370px] h-[370px] md:w-[780px] md:h-[780px]">
               <Image className="w-full" src={Add1} />
             </div>
           </div>
