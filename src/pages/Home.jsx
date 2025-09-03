@@ -4,7 +4,7 @@ import BannerImg from "../assets/BannerImg.jpg";
 import Container from "../component/Container";
 import Flex from "../component/Flex";
 import SmallList from "../component/SmallList";
-import { Fa2 } from "react-icons/fa6";
+import { Fa2, FaHeart } from "react-icons/fa6";
 import { FaTruck } from "react-icons/fa";
 import { GiReturnArrow } from "react-icons/gi";
 import Add1 from "../assets/Ad_1.jpg";
@@ -20,23 +20,37 @@ import offer from "../assets/offer.png";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-
+import "slick-carousel/slick/slick-theme.css";
 import NextPrve from "../component/NextPrve";
 import PrveNext from "../component/PrveNext";
 import axios from "axios";
-
-
+import { FaSync } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../Slices/AddToCartSlice";
+import MidList from "../component/MidList";
 
 function Home() {
-const [allData,setAllData]=useState([])
+  const [allData, setAllData] = useState([]);
 
- useEffect(()=>{
-    async function apiData(){
-      let data=await axios.get('https://dummyjson.com/products')
-      setAllData(data.data.products)
+  useEffect(() => {
+    async function apiData() {
+      let data = await axios.get("https://dummyjson.com/products");
+      setAllData(data.data.products);
     }
-    apiData()
-  },[])
+    apiData();
+  }, []);
+
+  let handleAddToCart = () => {
+    dispatch(
+      addtocart({
+        title: nameText,
+        price: priceText,
+        image: src,
+        quantity: 1,
+      })
+    );
+  };
 
   // Slick slider settings
 
@@ -45,18 +59,25 @@ const [allData,setAllData]=useState([])
     speed: 400,
     slidesToShow: 4,
     slidesToScroll: 2,
-    arrows:true,
-    nextArrow:<NextPrve/>,
-    prevArrow:<PrveNext/>,
-     responsive: [
+    arrows: true,
+    nextArrow: <NextPrve />,
+    prevArrow: <PrveNext />,
+    responsive: [
       {
-        breakpoint: 360,
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          
         },
-      },],
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
 
   var settingsBanner = {
@@ -64,51 +85,56 @@ const [allData,setAllData]=useState([])
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows:true,
-    autoplay:true,
-    autoplaySpeed:3000,
-   nextArrow:<NextPrve/>,
-    prevArrow:<PrveNext/>,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextPrve />,
+    prevArrow: <PrveNext />,
   };
 
   return (
     <div>
-
       {/* Banner Image */}
-       <div>
+      <div>
         <Slider {...settingsBanner}>
           <div className="">
             <Link to="/#">
               <Image className=" w-full" src={BannerImg} />
-             </Link>
+            </Link>
           </div>
           <div>
             <Link to="">
               <Link to="/#">
-              <Image className="w-full" src={BannerImg} />
-             </Link>
+                <Image className="w-full" src={BannerImg} />
+              </Link>
             </Link>
           </div>
           <div>
             <Link to="/#">
               <Image className="w-full" src={BannerImg} />
-             </Link>
+            </Link>
           </div>
         </Slider>
-       </div>
+      </div>
       {/* Info Section */}
-      
+
       <section className="border-b-[1px] border-[#F0F0F0]">
         <Container>
           <Flex className="py-8 px-2 md:px-0 justify-between">
             <Flex className="gap-x-2 md:gap-x-8 items-center">
               <Fa2 className="text-sm" />
-              <SmallList text="Two years warranty" className="text-[12px] md:text-base" />
+              <SmallList
+                text="Two years warranty"
+                className="text-[12px] md:text-base"
+              />
             </Flex>
 
             <Flex className="gap-x-2 md:gap-x-8 items-center">
               <FaTruck className="text-base" />
-              <SmallList text="Free shipping" className="text-[12px] md:text-base" />
+              <SmallList
+                text="Free shipping"
+                className="text-[12px] md:text-base"
+              />
             </Flex>
 
             <Flex className="gap-x-2 md:gap-x-8 items-center">
@@ -127,7 +153,7 @@ const [allData,setAllData]=useState([])
       <Container>
         <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
-            <div className="w-[370px] h-[370px] md:w-[780px] md:h-[780px]">
+            <div className="w-[400px] h-[400px] md:w-[780px] md:h-[780px]">
               <Image className="w-full" src={Add1} />
             </div>
           </div>
@@ -154,26 +180,70 @@ const [allData,setAllData]=useState([])
         {/* slack slider */}
 
         <Container>
-        <Slider {...settings}>
-        {
-          allData.map((item)=>(
-               <div>
-            <Link to="">
-              <Card
+          <Slider {...settings}>
+            {allData.map((item, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <Link to="">
+                  <div
+                    className={
+                      "w-full h-full md:w-[370px] md:h-[465px] relative group"
+                    }
+                  >
+                    <div className="absolute bg-black text-white top-5 left-5 px-8 py-2">
+                      new
+                    </div>
+                    <div className="w-full h-full md:w-[370px] md:h-[370px] relative ">
+                      <Image className="rounded-3xl" src={item.thumbnail} />
+                      <div
+                        className="absolute -bottom-1/3 bg-white opacity-0 h-2/5 w-full 
+        left-0 group-hover:bottom-0 group-hover:opacity-90 duration-500 invisible group-hover:visible"
+                      >
+                        <Flex className="flex-col gap-y-[21px] items-end px-[30px] py-[26px]">
+                          <Flex className="items-center gap-x-[15px]">
+                            <SmallList
+                              className="text-[16px]"
+                              text="Add to Wish List"
+                            />
+                            <FaHeart />
+                          </Flex>
+
+                          <Flex className="items-center gap-x-[15px]">
+                            <SmallList className="text-[16px]" text="Compare" />
+                            <FaSync />
+                          </Flex>
+
+                          <div onClick={handleAddToCart}>
+                            <Flex className="items-center gap-x-[15px]">
+                              <MidList
+                                className="text-base"
+                                text="Add to Cart"
+                              />
+                              <FaShoppingCart />
+                            </Flex>
+                          </div>
+                        </Flex>
+                      </div>
+                    </div>
+
+                    <Flex className="justify-between pt-6 pb-3">
+                      <MidList text={item.title} />
+                      <SmallList className="text-[16px]" text={item.price} />
+                    </Flex>
+                    <SmallList className="text-[16px]" text="Black" />
+                  </div>
+
+                  {/* <Card
               
                 src={item.thumbnail}
                 nameText={item.title}
                 colorText="Black"
                 priceText={item.price}
-              />
-            </Link>
-          </div>
-          ))
-        }
-         
-        </Slider>
+              /> */}
+                </Link>
+              </div>
+            ))}
+          </Slider>
         </Container>
-        
       </section>
 
       {/* Best seller section */}
@@ -181,31 +251,25 @@ const [allData,setAllData]=useState([])
       <section className="md:pb-20">
         <Container>
           <CommonHeading className="pb-8" text="Our BestSellers" />
-          </Container>
-          <Container>
-
-      {/* slack slider2 */}
-
-        <Slider {...settings}>
-
-           {
-          allData.map((item)=>(
-               <div>
-            <Link to="">
-              <Card
-                src={item.thumbnail}
-                nameText={item.title}
-                colorText="Black" priceText={item.price}
-              />
-            </Link>
-          </div>
-          ))
-        }
-        </Slider>
         </Container>
-          
-          
-        
+        <Container>
+          {/* slack slider2 */}
+
+          <Slider {...settings}>
+            {allData.map((item) => (
+              <div>
+                <Link to="">
+                  <Card
+                    src={item.thumbnail}
+                    nameText={item.title}
+                    colorText="Black"
+                    priceText={item.price}
+                  />
+                </Link>
+              </div>
+            ))}
+          </Slider>
+        </Container>
       </section>
 
       <section className="pb-20">
