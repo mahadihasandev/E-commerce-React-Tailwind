@@ -10,7 +10,7 @@ function BreadsCrumbs({className,page}) {
   return (
     <div className={` ${className}`}>
         <MidList className='text-5xl font-bold pb-4' text={page}/>
-        <div className='pb-20'>
+        <div>
           <p><Link to={crumbs.previousValue=='Home'
           ?
           '/'

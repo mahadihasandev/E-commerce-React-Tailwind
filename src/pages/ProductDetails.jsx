@@ -82,7 +82,7 @@ useEffect(()=>{
     <>
     <Container>
       {/* Breadcrumbs / Page title */}
-      <BreadsCrumbs page='ProductDetails'/>
+      <BreadsCrumbs className='my-10' page='ProductDetails'/>
      <div>
         {
           /* Product block:

@@ -55,7 +55,7 @@ function Shop() {
        <section>
         <Container >
           {/* Breadcrumbs / page title */}
-          <BreadsCrumbs page='Shop'/>
+          <BreadsCrumbs className="my-10" page='Shop'/>
           <Flex >
 
             {/* Left column: Shop by Category */}
