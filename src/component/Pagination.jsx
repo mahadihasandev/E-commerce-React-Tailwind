@@ -14,7 +14,7 @@ function Items({ currentItems }) {
         {currentItems &&
         currentItems.map((item,index) => (
           <div key={index}>
-            <Card nameText={item.title} src={item.thumbnail} priceText={item.price} />
+            <Card id={item.id} nameText={item.title} src={item.thumbnail} priceText={item.price} />
           </div>
         ))}
       </div>

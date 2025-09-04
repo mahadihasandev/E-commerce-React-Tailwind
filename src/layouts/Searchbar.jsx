@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { ImCross } from 'react-icons/im';
 import Button from '../component/Button';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { RxButton } from 'react-icons/rx';
 import { PiMinus, PiPlus } from 'react-icons/pi';
 import { IoMdCloseCircle, IoMdCloseCircleOutline } from "react-icons/io";
@@ -24,7 +24,7 @@ let cartItem=useSelector(state=>state.addToCart.cartItem)
 
 const [showcart,setShowCart]=useState(false)
 const [total,setTotal]=useState(0)
-console.log(total);
+
 
    let dispatch=useDispatch()
 let handleDecrement=(item)=>{

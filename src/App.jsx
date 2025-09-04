@@ -15,6 +15,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Error from "./pages/Error";
 import Rootlayouts from "./layouts/Rootlayouts";
+import { Journal } from "./pages/Journal";
 
 
 const router = createBrowserRouter(
@@ -23,12 +24,13 @@ const router = createBrowserRouter(
     <Route path="/" element={<Rootlayouts/>}>
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
-        <Route path="/products" element={<ProductDetails />}></Route>
+        <Route path="/products/:id" element={<ProductDetails />}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/contacts" element={<Contacts/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/signup" element={<Signup/>}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
+         <Route path="/journal" element={<Journal/>}></Route>
         <Route path="/checkout" element={<Checkout/>}></Route>
         <Route path="*" element={<Error/>}></Route>
     </Route>

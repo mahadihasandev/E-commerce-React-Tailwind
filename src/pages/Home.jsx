@@ -20,7 +20,7 @@ import offer from "../assets/offer.png";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import NextPrve from "../component/NextPrve";
 import PrveNext from "../component/PrveNext";
 import axios from "axios";
@@ -30,9 +30,27 @@ import { useDispatch } from "react-redux";
 import { addtocart } from "../Slices/AddToCartSlice";
 import MidList from "../component/MidList";
 
+/*
+  Home page
+  - Displays promotional banner carousel, informational badges, featured offer layout and multiple product carousels.
+  - Fetches product list from dummyjson (stored in allData) and renders cards inside react-slick sliders.
+  - Cart interaction: handleAddToCart dispatches addtocart action with minimal product data (title, price, thumbnail).
+  - Notes / design considerations:
+    * Sliders use slidesToShow and responsive breakpoints to change visible cards per viewport.
+    * Card components should be responsive (use w-full / max-w) so slick can size slides correctly.
+    * Each mapped slide uses a unique key (index or id) to avoid React warnings.
+    * Consider lazy-loading images for performance and using product id for cart identification in production.
+*/
+
 function Home() {
+
+  // local UI state: all fetched products
   const [allData, setAllData] = useState([]);
 
+  // redux dispatch for cart actions
+  let dispatch = useDispatch()
+
+  // Fetch product list once on mount
   useEffect(() => {
     async function apiData() {
       let data = await axios.get("https://dummyjson.com/products");
@@ -41,19 +59,23 @@ function Home() {
     apiData();
   }, []);
 
-  let handleAddToCart = () => {
+  // Add basic product info to cart slice (called from Card / CTA)
+  let handleAddToCart = (item) => {
+    console.log(item)
+    
     dispatch(
       addtocart({
-        title: nameText,
-        price: priceText,
-        image: src,
+        title: item.title,
+        price: item.price,
+        image: item.thumbnail,
         quantity: 1,
       })
     );
   };
 
-  // Slick slider settings
-
+  // Slick slider settings for product carousels
+  // - slidesToShow controls how many cards are visible
+  // - responsive breakpoints adjust slidesToShow for smaller screens
   var settings = {
     infinite: true,
     speed: 400,
@@ -80,6 +102,7 @@ function Home() {
     ],
   };
 
+  // Banner slider (single-slide autoplay)
   var settingsBanner = {
     infinite: true,
     speed: 400,
@@ -94,7 +117,7 @@ function Home() {
 
   return (
     <div>
-      {/* Banner Image */}
+      {/* Banner Image carousel (promotional) */}
       <div>
         <Slider {...settingsBanner}>
           <div className="">
@@ -116,8 +139,8 @@ function Home() {
           </div>
         </Slider>
       </div>
-      {/* Info Section */}
 
+      {/* Info badges (warranty / shipping / returns) */}
       <section className="border-b-[1px] border-[#F0F0F0]">
         <Container>
           <Flex className="py-8 px-2 md:px-0 justify-between">
@@ -148,8 +171,7 @@ function Home() {
         </Container>
       </section>
 
-      {/* offer Section */}
-
+      {/* Large offer / promotional layout: left hero image + stacked right images */}
       <Container>
         <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
@@ -170,96 +192,20 @@ function Home() {
         </Flex>
       </Container>
 
-      {/* New Arrival Section */}
-
+      {/* New Arrival Section - product carousel */}
       <section className="md:pb-20">
         <Container>
           <CommonHeading className="px-2 md:px-0 md:pb-8" text="New Arrival" />
         </Container>
 
-        {/* slack slider */}
-
         <Container>
           <Slider {...settings}>
             {allData.map((item, index) => (
+              // each slide centers a Card; Card itself should be responsive (w-full / max-w)
               <div key={index} className="flex items-center justify-center">
                 <Link to="">
-                  <div
-                    className={
-                      "w-full h-full md:w-[370px] md:h-[465px] relative group"
-                    }
-                  >
-                    <div className="absolute bg-black text-white top-5 left-5 px-8 py-2">
-                      new
-                    </div>
-                    <div className="w-full h-full md:w-[370px] md:h-[370px] relative ">
-                      <Image className="rounded-3xl" src={item.thumbnail} />
-                      <div
-                        className="absolute -bottom-1/3 bg-white opacity-0 h-2/5 w-full 
-        left-0 group-hover:bottom-0 group-hover:opacity-90 duration-500 invisible group-hover:visible"
-                      >
-                        <Flex className="flex-col gap-y-[21px] items-end px-[30px] py-[26px]">
-                          <Flex className="items-center gap-x-[15px]">
-                            <SmallList
-                              className="text-[16px]"
-                              text="Add to Wish List"
-                            />
-                            <FaHeart />
-                          </Flex>
-
-                          <Flex className="items-center gap-x-[15px]">
-                            <SmallList className="text-[16px]" text="Compare" />
-                            <FaSync />
-                          </Flex>
-
-                          <div onClick={handleAddToCart}>
-                            <Flex className="items-center gap-x-[15px]">
-                              <MidList
-                                className="text-base"
-                                text="Add to Cart"
-                              />
-                              <FaShoppingCart />
-                            </Flex>
-                          </div>
-                        </Flex>
-                      </div>
-                    </div>
-
-                    <Flex className="justify-between pt-6 pb-3">
-                      <MidList text={item.title} />
-                      <SmallList className="text-[16px]" text={item.price} />
-                    </Flex>
-                    <SmallList className="text-[16px]" text="Black" />
-                  </div>
-
-                  {/* <Card
-              
-                src={item.thumbnail}
-                nameText={item.title}
-                colorText="Black"
-                priceText={item.price}
-              /> */}
-                </Link>
-              </div>
-            ))}
-          </Slider>
-        </Container>
-      </section>
-
-      {/* Best seller section */}
-
-      <section className="md:pb-20">
-        <Container>
-          <CommonHeading className="pb-8" text="Our BestSellers" />
-        </Container>
-        <Container>
-          {/* slack slider2 */}
-
-          <Slider {...settings}>
-            {allData.map((item) => (
-              <div>
-                <Link to="">
                   <Card
+                   id={item.id}
                     src={item.thumbnail}
                     nameText={item.title}
                     colorText="Black"
@@ -272,12 +218,38 @@ function Home() {
         </Container>
       </section>
 
+      {/* Best sellers - reuse same slider settings */}
+      <section className="md:pb-20">
+        <Container>
+          <CommonHeading className="pb-8" text="Our BestSellers" />
+        </Container>
+        <Container>
+          <Slider {...settings}>
+            {allData.map((item) => (
+              <div>
+                <Link to="">
+                  <Card
+                    id={item.id}
+                    src={item.thumbnail}
+                    nameText={item.title}
+                    colorText="Black"
+                    priceText={item.price}
+                  />
+                </Link>
+              </div>
+            ))}
+          </Slider>
+        </Container>
+      </section>
+
+      {/* Promotional image / CTA */}
       <section className="pb-20">
         <Container>
           <Image src={offer} />
         </Container>
       </section>
 
+      {/* Static special offers row (non-carousel) */}
       <section className="pb-20">
         <Container>
           <CommonHeading className="" text="Special Offers" />
