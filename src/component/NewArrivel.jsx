@@ -24,8 +24,7 @@ const [allData,setAllData]=useState([])
 
 
   return (
-    <div>
-
+    <div className='mb-10'>
         <Swiper
         slidesPerView={4}
         autoHeight={true}
@@ -35,9 +34,9 @@ const [allData,setAllData]=useState([])
         //   clickable: true,
         // }}
         modules={[Navigation, Pagination]}
-        className="mySwiper"
+        className=""
         breakpoints={{
-         0: { slidesPerView: 1, spaceBetween: 8 },         
+         0: { slidesPerView: 1, spaceBetween: 1 },         
          640: { slidesPerView: 1, spaceBetween: 8 },          
          768: { slidesPerView: 2, spaceBetween: 10 },
           1000: { slidesPerView: 4, spaceBetween: 12 },
@@ -50,7 +49,7 @@ const [allData,setAllData]=useState([])
               <SwiperSlide >
                   <Card
                    id={item.id}
-                   
+                   className='ml-10'
                    src={item.thumbnail}
                    nameText={item.title}
                    colorText="Black"
@@ -61,14 +60,9 @@ const [allData,setAllData]=useState([])
         </>
             ))
         }
-        
-       
+
       </Swiper>
-        
-
-
           
-                  
     </div>
   )
 }

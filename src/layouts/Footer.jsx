@@ -12,11 +12,11 @@ import { FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className='py-[55px] bg-lightGray'>
-    <Container>
-      <Flex>
+  <footer className='py-[55px] bg-lightGray'>
+  <Container>
+    <Flex className='ml-10 gap-x-10'>
         <div className='w-[14%]'>
-        <MidList className="text-[16px] pb-[17px]" text="MENU"/>
+        <MidList className="md:text-[16px] pb-[17px]" text="MENU"/>
         <ul className='flex flex-col gap-y-[6px]'>
           <li><SmallList text="Home"/></li>
           <li><SmallList text="Shop"/></li>
@@ -24,10 +24,10 @@ function Footer() {
           <li><SmallList text="Contact"/></li>
           <li><SmallList text="Journal"/></li>
         </ul>       
-    </div>
+        </div>
 
-    <div className='w-[14%]'>
-       <MidList className="text-[16px] pb-[17px]" text="SHOP"/>
+      <div className='w-[14%]'>
+        <MidList className="text-[16px] pb-[17px]" text="SHOP"/>
         <ul className='flex flex-col gap-y-[6px]'>
           <li><SmallList text="Category 1"/></li>
           <li><SmallList text="Category 2"/></li>
@@ -49,21 +49,20 @@ function Footer() {
     </div>
 
     <div className='w-[29%]'>
-      <div>
+      <div className='hidden md:block'>
       <MidList className="text-[16px]" text="(052) 611-5711"/>
-      <MidList className="text-[16px] pb-[17px]" text="
-company@domain.com"/>
+      <MidList className="text-[16px] pb-[17px]" text="company@domain.com"/>
       </div>
-      <SmallList text="575 Crescent Ave. Quakertown, PA 18951"/>
+      <SmallList className="hidden md:block" text="575 Crescent Ave. Quakertown, PA 18951"/>
     </div>
-    <div className='w-[29%]'>
+    <div className='w-[29%] absolute right-3 md:'>
       <Image className='h-[29px] w-[122px]' src={logo}/>
     </div>
-      </Flex>
+  </Flex>
 
       <Flex className="pt-[65px] gap-x-[1037px]">
 
-        <div className='flex gap-x-[26px]'>
+        <div className='flex gap-x-[26px] ml-8 md:ml-5'>
           <FaFacebookF/>
           <FaLinkedinIn/>
           <FaInstagram/>

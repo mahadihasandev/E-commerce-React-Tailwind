@@ -46,13 +46,13 @@ function Navbar() {
 
     <nav className='md:hidden bg-white absolute z-20 left-0 right-0'>
         <Container>
-            <Flex className='justify-between items-center mx-4 my-5'>
+            <Flex className='justify-between items-center mx-5 my-4'>
               <div><Image src={Logo} className="" alt=""/> </div>
-              <div onClick={handleHam}><VscThreeBars /></div>
+              <div className='text-xl' onClick={handleHam}><VscThreeBars /></div>
               </Flex>
               {
                 ham&&< >
-              <div className='w-[90%] '>
+              <div className='w-[90%] pl-14 pb-5'>
               <ul className='flex flex-col gap-10 justify-center items-center'>
                 <Link onClick={()=>(handleBreadCrumb('Home'))} to='/'><List text='Home'/></Link>
                 <Link onClick={()=>(handleBreadCrumb('Shop'))} to='/shop'><List text='Shop'/></Link>

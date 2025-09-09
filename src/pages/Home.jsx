@@ -74,43 +74,6 @@ function Home() {
     );
   };
 
-  // Slick slider settings for product carousels
-  // - slidesToShow controls how many cards are visible
-  // - responsive breakpoints adjust slidesToShow for smaller screens
- 
-
-  var settings2 = {
-    infinite: true,
-    speed: 400,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    arrows: true,
-    nextArrow: <NextPrve />,
-    prevArrow: <PrveNext />,
-    responsive: [
-      {
-        breakpoint: 0,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-  };
 
   // Banner slider (single-slide autoplay)
   var settingsBanner = {
@@ -120,7 +83,7 @@ function Home() {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     nextArrow: <NextPrve />,
     prevArrow: <PrveNext />,
   };
@@ -132,29 +95,28 @@ function Home() {
         <Slider {...settingsBanner}>
           <div className="">
             <Link to="/#">
-              <Image className=" w-full" src={BannerImg} />
+              <Image className="h-[200px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
-          <div>
-            <Link to="">
-              <Link to="/#">
-                <Image className="w-full" src={BannerImg} />
-              </Link>
-            </Link>
-          </div>
-          <div>
+          <div className="">
             <Link to="/#">
-              <Image className="w-full" src={BannerImg} />
+              <Image className="h-[200px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
+          <div className="">
+            <Link to="/#">
+              <Image className="h-[200px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+            </Link>
+          </div>
+        
         </Slider>
       </div>
 
       {/* Info badges (warranty / shipping / returns) */}
       <section className="border-b-[1px] border-[#F0F0F0]">
         <Container>
-          <Flex className="py-8 px-2 md:px-0 justify-between">
-            <Flex className="gap-x-2 md:gap-x-8 items-center">
+          <Flex className="py-8 px-5 md:px-0 justify-between">
+            <Flex className="gap-x-1 md:gap-x-8 items-center">
               <Fa2 className="text-sm" />
               <SmallList
                 text="Two years warranty"
@@ -173,7 +135,7 @@ function Home() {
             <Flex className="gap-x-2 md:gap-x-8 items-center">
               <GiReturnArrow className="text-base" />
               <SmallList
-                text="Return policy in 30 days"
+                text="Return: 30 days"
                 className="text-[12px] md:text-base"
               />
             </Flex>
@@ -185,7 +147,7 @@ function Home() {
       <Container>
         <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
-            <div className="w-[400px] h-[400px] md:w-[780px] md:h-[780px]">
+            <div className="w-[500px] h-[500px] md:w-[780px] md:h-[780px]">
               <Image className="w-full" src={Add1} />
             </div>
           </div>
@@ -205,86 +167,36 @@ function Home() {
       {/* New Arrival Section - product carousel */}
       <section className="md:pb-20">
         <Container>
-          <CommonHeading className="px-2 md:px-0 md:pb-8" text="New Arrival" />
+          <CommonHeading className="px-7 py-3 md:py-0 md:px-0 md:pb-8" text="New Arrival" />
         </Container>
 
         <Container>
-          
-
-
           <NewArrivel/>
-
-
-
-
-
-
-
         </Container>
       </section>
 
       {/* Best sellers - reuse same slider settings */}
       <section className="md:pb-20">
         <Container>
-          <CommonHeading className="pb-8" text="Our BestSellers" />
+          <CommonHeading className="pb-8 ml-7" text="Our BestSellers" />
         </Container>
         <Container>
-          <Slider {...settings2}>
-            {allData.map((item) => (
-              <div>
-                <Link to="">
-                  <Card
-                    id={item.id}
-                    src={item.thumbnail}
-                    nameText={item.title}
-                    colorText="Black"
-                    priceText={item.price}
-                  />
-                </Link>
-              </div>
-            ))}
-          </Slider>
+          <NewArrivel/>
         </Container>
       </section>
 
       {/* Promotional image / CTA */}
-      <section className="pb-20">
+      <section className="pb-16">
         <Container>
-          <Image src={offer} />
+          <Image className='w-[480px] h-[200px] object-cover md:w-full md:h-full md:object-none' src={offer} />
         </Container>
       </section>
 
       {/* Static special offers row (non-carousel) */}
       <section className="pb-20">
         <Container>
-          <CommonHeading className="" text="Special Offers" />
-          <Flex className="gap-x-10 py-10">
-            <Card
-              src={cardImg1}
-              nameText="Basic Crew Neck Tee"
-              colorText="Black"
-              priceText="$44.00"
-            />
-
-            <Card
-              src={cardImg2}
-              nameText="Smart Watch"
-              colorText="Black"
-              priceText="$50.00"
-            />
-            <Card
-              src={cardImg3}
-              nameText="Basket"
-              colorText="Multi color"
-              priceText="$20.00"
-            />
-            <Card
-              src={cardImg4}
-              nameText="Doll"
-              colorText="Gray"
-              priceText="$30.00"
-            />
-          </Flex>
+          <CommonHeading className="ml-7 mb-8 md:ml-0 " text="Special Offers" />
+          <NewArrivel/>
         </Container>
       </section>
     </div>

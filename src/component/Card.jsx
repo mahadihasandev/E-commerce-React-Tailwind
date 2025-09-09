@@ -28,9 +28,9 @@ function Card({id,src,className,nameText,priceText,colorText,classname2nd}) {
     <>
     <div className={`w-[370px] h-[465px] relative group ${className}`}>
       <div className='absolute bg-black text-white top-5 left-5 px-8 py-2'>new</div>
-        <div className='w-full md:w-[370px] h-[370px] relative '>            
+        <div className=' md:w-[370px] h-[370px] relative '>            
             <Link to={`/products/${id}`}>
-            <Image className='rounded-3xl' src={src}/>
+            <Image className='rounded-3xl ml-12 md:ml-10' src={src}/>
             </Link>
             <div className='absolute -bottom-1/3 bg-white opacity-0 h-2/5 w-full 
         left-0 group-hover:bottom-0 group-hover:opacity-90 duration-500 invisible group-hover:visible'>
@@ -60,11 +60,11 @@ function Card({id,src,className,nameText,priceText,colorText,classname2nd}) {
         </div>
         </div>
         <Link to={`/products/${id}`}>
-        <Flex className='justify-between pt-6 pb-3'>
-            <MidList text={nameText}/>
-            <SmallList className='text-[16px]' text={priceText}/>
+        <Flex className='justify-around items-center ml-5 md:ml-0 pt-6 pb-3'>
+            <MidList className='!text-base' text={nameText}/>
+            <SmallList className='text-[16px] ml-5 md:ml-0' text={priceText}/>
         </Flex>
-            <SmallList className='text-[16px]' text={colorText}/>
+            <SmallList className='text-[16px] ml-8 md:ml-14' text={colorText}/>
             </Link>
     </div>
     </>
