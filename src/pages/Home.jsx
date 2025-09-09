@@ -29,6 +29,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addtocart } from "../Slices/AddToCartSlice";
 import MidList from "../component/MidList";
+import NewArrivel from "../component/NewArrivel";
 
 /*
   Home page
@@ -76,7 +77,9 @@ function Home() {
   // Slick slider settings for product carousels
   // - slidesToShow controls how many cards are visible
   // - responsive breakpoints adjust slidesToShow for smaller screens
-  var settings = {
+ 
+
+  var settings2 = {
     infinite: true,
     speed: 400,
     slidesToShow: 4,
@@ -86,14 +89,21 @@ function Home() {
     prevArrow: <PrveNext />,
     responsive: [
       {
-        breakpoint: 480,
+        breakpoint: 0,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1000,
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -199,21 +209,17 @@ function Home() {
         </Container>
 
         <Container>
-          <Slider {...settings}>
-            {allData.map((item, index) => (
-              <div key={index} className="flex items-center justify-center">
-                <Link to="">
-                  <Card
-                   id={item.id}
-                    src={item.thumbnail}
-                    nameText={item.title}
-                    colorText="Black"
-                    priceText={item.price}
-                  />
-                </Link>
-              </div>
-            ))}
-          </Slider>
+          
+
+
+          <NewArrivel/>
+
+
+
+
+
+
+
         </Container>
       </section>
 
@@ -223,7 +229,7 @@ function Home() {
           <CommonHeading className="pb-8" text="Our BestSellers" />
         </Container>
         <Container>
-          <Slider {...settings}>
+          <Slider {...settings2}>
             {allData.map((item) => (
               <div>
                 <Link to="">
