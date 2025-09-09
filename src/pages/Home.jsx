@@ -201,7 +201,6 @@ function Home() {
         <Container>
           <Slider {...settings}>
             {allData.map((item, index) => (
-              // each slide centers a Card; Card itself should be responsive (w-full / max-w)
               <div key={index} className="flex items-center justify-center">
                 <Link to="">
                   <Card

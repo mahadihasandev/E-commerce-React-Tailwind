@@ -54,11 +54,11 @@ function Shop() {
   <>
        <section>
         <Container >
-          {/* Breadcrumbs / page title */}
+          {/* Breadcrumbs page title */}
           <BreadsCrumbs className="my-10" page='Shop'/>
           <Flex >
 
-            {/* Left column: Shop by Category */}
+            {/*  Shop by Category */}
             <div className="w-3/12 pr-10">
               <MidList className='mt-4 mb-10' text='Shop by Catagory'/>
 
@@ -107,10 +107,10 @@ function Shop() {
               )}
             </div>
 
-            {/* Right column: product controls + paginated listing */}
+            {/* Right column product controls paginated listing */}
             <div className="w-9/12 ">
                 <Flex className="justify-between mt-5 mb-5">
-                  {/* View toggle (grid / list) - purely visual icons */}
+                  {/* View toggle (grid / list) purely visual icons */}
                   <Flex className='gap-x-3'>
                     <GrAppsRounded className=" text-2xl"/>
                     <FaListUl className="text-2xl" />
@@ -120,7 +120,7 @@ function Shop() {
                   <Flex className='gap-x-10'>
                      <Flex className='gap-x-3 items-center'>
                        <h4 className="font-DMs">Short by:</h4>
-                       {/* Sort select - replace options with real sort keys when data available */}
+                       {/* replace options with real sort keys when data available */}
                        <select className="py-2 px-5 border border-[#F0F0F0]">
                          <option>Feature</option>
                          <option>Populer</option>

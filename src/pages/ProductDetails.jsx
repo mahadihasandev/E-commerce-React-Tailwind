@@ -85,16 +85,10 @@ useEffect(()=>{
       <BreadsCrumbs className='my-10' page='ProductDetails'/>
      <div>
         {
-          /* Product block:
-             - iterates all products and matches by title param (params.title)
-             - Consider rendering a single product object and adding `key` when mapping lists
-          */
+          /*  iterates all products and matches by title param (params.title) */
           data2.map((item)=>( 
             item.id==params.id && <>
-            {/* Top product image (media) */}
               <div className='h-[370px] w-[370px] ml-24'> <Image src={item.thumbnail}/></div>
-
-              {/* Product title */}
                 <CommonHeading className='pt-16 pb-4' text={item.title}/>
 
               {/* Rating row (stars + review count) */}
@@ -110,7 +104,7 @@ useEffect(()=>{
       <p className='text-lightDark text-sm font-DMs font-normal'>{`${item.reviews.length} Reviews`}</p>
       </Flex>
 
-      {/* Price block (regular + sale) */}
+      {/* Price block */}
       <div className='w-1/2 border-[#D8D8D8] border-b py-6'>
         <Flex className='text-center gap-[22px]'>
         <SmallList text={`Discount: ${item.discountPercentage}%`} />
@@ -145,7 +139,7 @@ useEffect(()=>{
         </Flex>
       </Flex>
 
-      {/* Quantity control - placeholder UI */}
+      {/* Quantity control placeholder UI */}
       <Flex className='gap-x-[29px] items-center py-7'>
         <SmallList className='!font-extrabold !text-black' text='QUANTITY'/>
         <Flex className='items-center gap-x-4'>
@@ -166,7 +160,7 @@ useEffect(()=>{
       </Flex>
       </div>
 
-      {/* CTA buttons: wishlist and add to cart */}
+      {/* wishlist and add to cart */}
       <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
       <Flex className='gap-x-5 items-center py-7'>
         <Button text='Add to Wish List'/>
@@ -174,7 +168,7 @@ useEffect(()=>{
       </Flex>
       </div>
 
-      {/* Features & Shipping accordions (design placeholders with icon) */}
+      {/* Features & Shipping accordions  */}
       <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
       <Flex className='justify-between items-center py-7'>
         <SmallList className='!font-extrabold !text-black' text='FEATURES & DETAILS'/>

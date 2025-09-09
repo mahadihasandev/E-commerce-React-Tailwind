@@ -20,7 +20,9 @@ export const AddToCartSlice = createSlice({
         if(item.title==action.payload.title){
           item.quantity=item.quantity+1
         } 
+
       })
+      localStorage.setItem("cart",JSON.stringify(state.cartItem))
     },
     decrement:(state,action)=>{
       state.cartItem.map((item)=>{
@@ -30,15 +32,15 @@ export const AddToCartSlice = createSlice({
           }
         } 
       })
+      localStorage.setItem("cart",JSON.stringify(state.cartItem))
     },
     remove:(state,action)=>{      
       state.cartItem.map((item,index)=>{
         if(item.title==action.payload.title){
           state.cartItem.splice(index,1)
-          localStorage.removeItem('cart',index)
-          
         } 
       })
+      localStorage.setItem("cart",JSON.stringify(state.cartItem))
     }
   }
   })
