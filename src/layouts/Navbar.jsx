@@ -52,7 +52,7 @@ function Navbar() {
               </Flex>
               {
                 ham&&< >
-              <div className='w-[90%] pl-14 pb-5'>
+              <div className='w-[90%] pl-12 pb-5'>
               <ul className='flex flex-col gap-10 justify-center items-center'>
                 <Link onClick={()=>(handleBreadCrumb('Home'))} to='/'><List text='Home'/></Link>
                 <Link onClick={()=>(handleBreadCrumb('Shop'))} to='/shop'><List text='Shop'/></Link>

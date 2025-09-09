@@ -49,7 +49,7 @@ const [allData,setAllData]=useState([])
               <SwiperSlide >
                   <Card
                    id={item.id}
-                   className='ml-10'
+                   className='ml-4'
                    src={item.thumbnail}
                    nameText={item.title}
                    colorText="Black"

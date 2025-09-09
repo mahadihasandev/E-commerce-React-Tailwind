@@ -55,8 +55,8 @@ function Footer() {
       </div>
       <SmallList className="hidden md:block" text="575 Crescent Ave. Quakertown, PA 18951"/>
     </div>
-    <div className='w-[29%] absolute right-3 md:'>
-      <Image className='h-[29px] w-[122px]' src={logo}/>
+    <div className='w-[29%] absolute -right-5 mt-1'>
+      <Image className='h-[18px] w-[70px] md:h-[29px] md:w-[122px]' src={logo}/>
     </div>
   </Flex>
 
