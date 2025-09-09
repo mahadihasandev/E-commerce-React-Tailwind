@@ -95,17 +95,17 @@ function Home() {
         <Slider {...settingsBanner}>
           <div className="">
             <Link to="/#">
-              <Image className="h-[200px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[190px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
           <div className="">
             <Link to="/#">
-              <Image className="h-[200px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[190px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
           <div className="">
             <Link to="/#">
-              <Image className="h-[200px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[190px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
         
