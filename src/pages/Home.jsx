@@ -95,17 +95,17 @@ function Home() {
         <Slider {...settingsBanner}>
           <div className="">
             <Link to="/#">
-              <Image className="h-[190px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[160px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
           <div className="">
             <Link to="/#">
-              <Image className="h-[190px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[160px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
           <div className="">
             <Link to="/#">
-              <Image className="h-[190px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[160px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
             </Link>
           </div>
         
@@ -147,7 +147,7 @@ function Home() {
       <Container>
         <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
           <div className="w-1/2">
-            <div className="w-[500px] h-[500px] md:w-[780px] md:h-[780px]">
+            <div className="w-[485px] h-[485px] md:w-[780px] md:h-[780px]">
               <Image className="w-full" src={Add1} />
             </div>
           </div>
