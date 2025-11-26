@@ -36,10 +36,11 @@ const [allData,setAllData]=useState([])
         modules={[Navigation, Pagination]}
         className=""
         breakpoints={{
-         0: { slidesPerView: 1, spaceBetween: 1 },         
-         640: { slidesPerView: 1, spaceBetween: 8 },          
-         768: { slidesPerView: 2, spaceBetween: 10 },
-          1000: { slidesPerView: 4, spaceBetween: 12 },
+         0: { slidesPerView: 1, spaceBetween: 10 },         
+        640: { slidesPerView: 2, spaceBetween: 12 },          
+        768: { slidesPerView: 2, spaceBetween: 14 },
+        1024: { slidesPerView: 3, spaceBetween: 16 },
+          1200: { slidesPerView: 4, spaceBetween: 20 },
        }}
       >
 

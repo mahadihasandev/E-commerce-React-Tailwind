@@ -26,30 +26,30 @@ function Card({id,src,className,nameText,priceText,colorText,classname2nd}) {
 
   return (
     <>
-    <div className={`w-[370px] h-[465px] relative group ${className}`}>
-      <div className='absolute bg-black text-white top-5 left-5 px-8 py-2'>new</div>
-        <div className='md:w-[370px] h-[370px] relative '>            
+    <div className={`w-full max-w-[370px] mx-auto h-auto min-h-[465px] relative group ${className}`}>
+      <div className='absolute bg-black text-white top-3 sm:top-5 left-3 sm:left-5 px-4 sm:px-6 md:px-8 py-1 sm:py-2 text-xs sm:text-sm z-10'>new</div>
+        <div className='w-full aspect-square relative overflow-hidden'>            
             <Link to={`/products/${id}`}>
-            <Image className='rounded-3xl ml-5 md:ml-10' src={src}/>
+            <Image className='rounded-2xl sm:rounded-3xl w-full h-full object-cover' src={src}/>
             </Link>
             <div className='absolute -bottom-1/3 bg-white opacity-0 h-2/5 w-full 
         left-0 group-hover:bottom-0 group-hover:opacity-90 duration-500 invisible group-hover:visible'>
-          <Flex className="flex-col gap-y-[21px] items-end px-[30px] py-[26px]">
+          <Flex className="flex-col gap-y-3 sm:gap-y-[21px] items-end px-4 sm:px-6 md:px-[30px] py-4 sm:py-5 md:py-[26px]">
             
-          <Flex className='items-center gap-x-[15px]'>
-            <SmallList className='text-[16px]' text='Add to Wish List'/>
-            <FaHeart />
+          <Flex className='items-center gap-x-2 sm:gap-x-[15px]'>
+            <SmallList className='text-sm sm:text-[16px]' text='Add to Wish List'/>
+            <FaHeart className='text-sm sm:text-base' />
           </Flex>
 
-          <Flex className='items-center gap-x-[15px]'>
-              <SmallList className='text-[16px]' text='Compare'/>
-              <FaSync />
+          <Flex className='items-center gap-x-2 sm:gap-x-[15px]'>
+              <SmallList className='text-sm sm:text-[16px]' text='Compare'/>
+              <FaSync className='text-sm sm:text-base' />
           </Flex>
 
             <div onClick={handleAddToCart} >
-          <Flex className='items-center gap-x-[15px]'>
-            <MidList className='text-base' text='Add to Cart'/>
-            <FaShoppingCart />
+          <Flex className='items-center gap-x-2 sm:gap-x-[15px]'>
+            <MidList className='text-sm sm:text-base' text='Add to Cart'/>
+            <FaShoppingCart className='text-sm sm:text-base' />
           </Flex>
           </div>
             
@@ -60,11 +60,11 @@ function Card({id,src,className,nameText,priceText,colorText,classname2nd}) {
         </div>
         </div>
         <Link to={`/products/${id}`}>
-        <Flex className='justify-between items-center md:ml-0 pt-6 pb-3'>
-            <MidList className='!text-base ' text={nameText}/>
-            <SmallList className='text-[16px] mx-10 md:ml-0' text={priceText}/>
+        <Flex className='justify-between items-center pt-4 sm:pt-6 pb-2 sm:pb-3 px-2 sm:px-0'>
+            <MidList className='!text-sm sm:!text-base' text={nameText}/>
+            <SmallList className='text-sm sm:text-[16px]' text={priceText}/>
         </Flex>
-            <SmallList className='text-[16px] md:ml-14' text={colorText}/>
+            <SmallList className='text-sm sm:text-[16px] px-2 sm:px-0' text={colorText}/>
             </Link>
     </div>
     </>

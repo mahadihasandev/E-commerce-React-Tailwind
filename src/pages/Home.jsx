@@ -95,17 +95,17 @@ function Home() {
         <Slider {...settingsBanner}>
           <div className="">
             <Link to="/#">
-              <Image className="h-[150px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover w-full" src={BannerImg} />
             </Link>
           </div>
           <div className="">
             <Link to="/#">
-              <Image className="h-[150px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover w-full" src={BannerImg} />
             </Link>
           </div>
           <div className="">
             <Link to="/#">
-              <Image className="h-[150px] object-cover md:object-none md:h-full md:w-full" src={BannerImg} />
+              <Image className="h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover w-full" src={BannerImg} />
             </Link>
           </div>
         
@@ -115,28 +115,28 @@ function Home() {
       {/* Info badges (warranty / shipping / returns) */}
       <section className="border-b-[1px] border-[#F0F0F0]">
         <Container>
-          <Flex className="py-8 px-5 md:px-0 justify-between">
-            <Flex className="gap-x-1 md:gap-x-8 items-center">
-              <Fa2 className="text-sm" />
+          <Flex className="py-4 sm:py-6 md:py-8 px-5 md:px-0 flex-col sm:flex-row justify-between gap-4 sm:gap-0">
+            <Flex className="gap-x-2 sm:gap-x-4 md:gap-x-8 items-center justify-center sm:justify-start">
+              <Fa2 className="text-sm md:text-base" />
               <SmallList
                 text="Two years warranty"
-                className="text-[12px] md:text-base"
+                className="text-[12px] sm:text-sm md:text-base"
               />
             </Flex>
 
-            <Flex className="gap-x-2 md:gap-x-8 items-center">
-              <FaTruck className="text-base" />
+            <Flex className="gap-x-2 sm:gap-x-4 md:gap-x-8 items-center justify-center sm:justify-start">
+              <FaTruck className="text-sm md:text-base" />
               <SmallList
                 text="Free shipping"
-                className="text-[12px] md:text-base"
+                className="text-[12px] sm:text-sm md:text-base"
               />
             </Flex>
 
-            <Flex className="gap-x-2 md:gap-x-8 items-center">
-              <GiReturnArrow className="text-base" />
+            <Flex className="gap-x-2 sm:gap-x-4 md:gap-x-8 items-center justify-center sm:justify-start">
+              <GiReturnArrow className="text-sm md:text-base" />
               <SmallList
                 text="Return: 30 days"
-                className="text-[12px] md:text-base"
+                className="text-[12px] sm:text-sm md:text-base"
               />
             </Flex>
           </Flex>
@@ -145,19 +145,19 @@ function Home() {
 
       {/* Large offer / promotional layout: left hero image + stacked right images */}
       <Container>
-        <Flex className="gap-x-10 md:pt-[140px] pb-4 md:pb-[128px]">
-          <div className="w-1/2">
-            <div className="w-[480px] h-[480px] md:w-[780px] md:h-[780px]">
-              <Image className="w-full" src={Add1} />
+        <Flex className="gap-x-4 sm:gap-x-6 md:gap-x-10 pt-8 sm:pt-12 md:pt-[140px] pb-4 sm:pb-8 md:pb-[128px] flex-col md:flex-row">
+          <div className="w-full md:w-1/2">
+            <div className="w-full h-auto">
+              <Image className="w-full h-auto object-cover" src={Add1} />
             </div>
           </div>
-          <div className="hidden md:block w-1/2 ">
-            <Flex className="flex-col gap-y-10">
-              <div className="w-[784px] h-[370px]">
-                <Image className="w-full" src={Add2} />
+          <div className="w-full md:w-1/2">
+            <Flex className="flex-col gap-y-4 sm:gap-y-6 md:gap-y-10">
+              <div className="w-full h-auto">
+                <Image className="w-full h-auto object-cover" src={Add2} />
               </div>
-              <div className="w-[784px] h-[370px]">
-                <Image className="w-full" src={Add3} />
+              <div className="w-full h-auto">
+                <Image className="w-full h-auto object-cover" src={Add3} />
               </div>
             </Flex>
           </div>
@@ -165,9 +165,9 @@ function Home() {
       </Container>
 
       {/* New Arrival Section - product carousel */}
-      <section className="md:pb-20">
+      <section className="pb-8 sm:pb-12 md:pb-20">
         <Container>
-          <CommonHeading className="px-7 py-3 md:py-0 md:px-0 md:pb-8" text="New Arrival" />
+          <CommonHeading className="px-4 sm:px-6 md:px-0 py-3 sm:py-4 md:py-0 md:pb-8" text="New Arrival" />
         </Container>
 
         <Container>
@@ -176,9 +176,9 @@ function Home() {
       </section>
 
       {/* Best sellers - reuse same slider settings */}
-      <section className="md:pb-20">
+      <section className="pb-8 sm:pb-12 md:pb-20">
         <Container>
-          <CommonHeading className="pb-8 ml-7" text="Our BestSellers" />
+          <CommonHeading className="pb-6 sm:pb-8 px-4 sm:px-6 md:px-0 md:ml-0" text="Our BestSellers" />
         </Container>
         <Container>
           <NewArrivel/>
@@ -186,16 +186,16 @@ function Home() {
       </section>
 
       {/* Promotional image / CTA */}
-      <section className="pb-16">
+      <section className="pb-8 sm:pb-12 md:pb-16">
         <Container>
-          <Image className='w-[480px] h-[200px] object-cover md:w-full md:h-full md:object-none' src={offer} />
+          <Image className='w-full h-auto object-cover' src={offer} />
         </Container>
       </section>
 
       {/* Static special offers row (non-carousel) */}
-      <section className="pb-20">
+      <section className="pb-12 sm:pb-16 md:pb-20">
         <Container>
-          <CommonHeading className="ml-7 mb-8 md:ml-0 " text="Special Offers" />
+          <CommonHeading className="px-4 sm:px-6 md:px-0 mb-6 sm:mb-8 md:ml-0" text="Special Offers" />
           <NewArrivel/>
         </Container>
       </section>

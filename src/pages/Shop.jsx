@@ -55,19 +55,19 @@ function Shop() {
        <section>
         <Container >
           {/* Breadcrumbs page title */}
-          <BreadsCrumbs className="my-10" page='Shop'/>
-          <Flex >
+          <BreadsCrumbs className="my-6 sm:my-8 md:my-10" page='Shop'/>
+          <Flex className='flex-col lg:flex-row gap-6 lg:gap-0'>
 
             {/*  Shop by Category */}
-            <div className="w-3/12 pr-10">
-              <MidList className='mt-4 mb-10' text='Shop by Catagory'/>
+            <div className="w-full lg:w-3/12 lg:pr-6 xl:pr-10">
+              <MidList className='mt-2 sm:mt-4 mb-6 sm:mb-8 md:mb-10' text='Shop by Catagory'/>
 
               {/* Category 1 - clickable header toggles its children */}
               <div onClick={handleCatagoryone}>
                 <Catagory type='plus' plusicon={showsubcatagoryone} catagoryText='Catagory 1'/>
               </div>
               {showsubcatagoryone && (
-                <div className="bg-lightGray rounded-md px-5">
+                <div className="bg-lightGray rounded-md px-4 sm:px-5">
                   {/* Subcategory items (static for demo) */}
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
@@ -83,7 +83,7 @@ function Shop() {
                 <Catagory type='plus' plusicon={showsubcatagorytwo} catagoryText='Catagory 1'/>
               </div>
               {showsubcatagorytwo && (
-                <div className="bg-lightGray rounded-md px-5">
+                <div className="bg-lightGray rounded-md px-4 sm:px-5">
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Electronics'/>
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Headphone'/>
@@ -98,7 +98,7 @@ function Shop() {
                 <Catagory type='plus' plusicon={showsubcatagorythree} catagoryText='Catagory 1'/>
               </div>
               {showsubcatagorythree && (
-                <div className="bg-lightGray rounded-md px-5">
+                <div className="bg-lightGray rounded-md px-4 sm:px-5">
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Laptop'/>
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Headphone'/>
                   <Catagory className="border-gray-300" textClass='text-sm' catagoryText='Smartphone'/>
@@ -108,20 +108,20 @@ function Shop() {
             </div>
 
             {/* Right column product controls paginated listing */}
-            <div className="w-9/12 ">
-                <Flex className="justify-between mt-5 mb-5">
+            <div className="w-full lg:w-9/12">
+                <Flex className="flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mt-3 sm:mt-5 mb-4 sm:mb-5">
                   {/* View toggle (grid / list) purely visual icons */}
                   <Flex className='gap-x-3'>
-                    <GrAppsRounded className=" text-2xl"/>
-                    <FaListUl className="text-2xl" />
+                    <GrAppsRounded className="text-xl sm:text-2xl cursor-pointer"/>
+                    <FaListUl className="text-xl sm:text-2xl cursor-pointer" />
                   </Flex>
 
                   {/* Sort and show controls */}
-                  <Flex className='gap-x-10'>
-                     <Flex className='gap-x-3 items-center'>
-                       <h4 className="font-DMs">Short by:</h4>
+                  <Flex className='flex-col sm:flex-row gap-3 sm:gap-x-6 md:gap-x-10 w-full sm:w-auto'>
+                     <Flex className='gap-x-2 sm:gap-x-3 items-center'>
+                       <h4 className="font-DMs text-sm sm:text-base">Short by:</h4>
                        {/* replace options with real sort keys when data available */}
-                       <select className="py-2 px-5 border border-[#F0F0F0]">
+                       <select className="py-2 px-3 sm:px-5 border border-[#F0F0F0] text-sm sm:text-base w-full sm:w-auto">
                          <option>Feature</option>
                          <option>Populer</option>
                          <option>New</option>
@@ -129,10 +129,10 @@ function Shop() {
                        </select>
                      </Flex> 
 
-                     <Flex className='gap-x-3 items-center'>
-                       <h4 className="font-DMs">Show:</h4>
+                     <Flex className='gap-x-2 sm:gap-x-3 items-center'>
+                       <h4 className="font-DMs text-sm sm:text-base">Show:</h4>
                        {/* Show select controls items per page passed to Pagination */}
-                       <select onChange={handleSelect} className="py-2 px-5 border border-[#F0F0F0]">
+                       <select onChange={handleSelect} className="py-2 px-3 sm:px-5 border border-[#F0F0F0] text-sm sm:text-base w-full sm:w-auto">
                          <option>9</option>
                          <option>18</option>
                          <option>24</option>

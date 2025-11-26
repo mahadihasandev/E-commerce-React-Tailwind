@@ -25,12 +25,12 @@ function Navbar() {
 
   return (
     <>
-    <nav className='hidden md:block py-8 bg-white'>
+    <nav className='hidden md:block py-4 sm:py-6 md:py-8 bg-white'>
         <Container>
-            <Flex>
-              <div className='w-[38%]'><Image src={Logo} className="" alt=""/> </div>
+            <Flex className='items-center'>
+              <div className='w-[38%]'><Image src={Logo} className="w-24 sm:w-32 md:w-auto h-auto" alt=""/> </div>
               <div className='w-[40%]'>
-              <ul className='flex gap-10'>
+              <ul className='flex gap-6 lg:gap-10 justify-center'>
                 <Link onClick={()=>(handleBreadCrumb('Home'))} to='/'><List text='Home'/></Link>
                 <Link onClick={()=>(handleBreadCrumb('Shop'))} to='/shop'><List text='Shop'/></Link>
                 <Link onClick={()=>(handleBreadCrumb('About'))} to='/about'><List text='About'/></Link>
@@ -44,21 +44,21 @@ function Navbar() {
         </Container>
     </nav>
 
-    <nav className='md:hidden bg-white absolute z-20 left-0 right-0'>
+    <nav className='md:hidden bg-white sticky top-0 z-20 left-0 right-0 shadow-sm'>
         <Container>
-            <Flex className='justify-between items-center mx-5 my-4'>
-              <div><Image src={Logo} className="" alt=""/> </div>
-              <div className='text-xl' onClick={handleHam}><VscThreeBars /></div>
+            <Flex className='justify-between items-center py-3 sm:py-4'>
+              <div className='w-24 sm:w-32'><Image src={Logo} className="w-full h-auto" alt=""/> </div>
+              <div className='text-2xl sm:text-3xl cursor-pointer' onClick={handleHam}><VscThreeBars /></div>
               </Flex>
               {
                 ham&&< >
-              <div className='w-[90%] pl-12 pb-5'>
-              <ul className='flex flex-col gap-10 justify-center items-center'>
-                <Link onClick={()=>(handleBreadCrumb('Home'))} to='/'><List text='Home'/></Link>
-                <Link onClick={()=>(handleBreadCrumb('Shop'))} to='/shop'><List text='Shop'/></Link>
-                <Link onClick={()=>(handleBreadCrumb('About'))} to='/about'><List text='About'/></Link>
-                <Link onClick={()=>(handleBreadCrumb('Journal'))} to='/journal'><List text='Journal'/></Link>
-                <Link onClick={()=>(handleBreadCrumb('Contact'))} to='/contact'><List text='Contact'/></Link>
+              <div className='w-full px-4 sm:px-6 pb-5 bg-white border-t'>
+              <ul className='flex flex-col items-center gap-4 sm:gap-6 md:gap-10 py-4'>
+                <Link onClick={()=>{handleBreadCrumb('Home'); setHam(false)}} to='/'><List text='Home'/></Link>
+                <Link onClick={()=>{handleBreadCrumb('Shop'); setHam(false)}} to='/shop'><List text='Shop'/></Link>
+                <Link onClick={()=>{handleBreadCrumb('About'); setHam(false)}} to='/about'><List text='About'/></Link>
+                <Link onClick={()=>{handleBreadCrumb('Journal'); setHam(false)}} to='/journal'><List text='Journal'/></Link>
+                <Link onClick={()=>{handleBreadCrumb('Contact'); setHam(false)}} to='/contact'><List text='Contact'/></Link>
               </ul>
               </div>
               

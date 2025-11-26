@@ -82,55 +82,57 @@ useEffect(()=>{
     <>
     <Container>
       {/* Breadcrumbs / Page title */}
-      <BreadsCrumbs className='my-10' page='ProductDetails'/>
+      <BreadsCrumbs className='my-6 sm:my-8 md:my-10' page='ProductDetails'/>
      <div>
         {
           /*  iterates all products and matches by title param (params.title) */
           data2.map((item)=>( 
             item.id==params.id && <>
-              <div className='h-[370px] w-[370px] ml-24'> <Image src={item.thumbnail}/></div>
-                <CommonHeading className='pt-16 pb-4' text={item.title}/>
+              <div className='w-full max-w-[370px] mx-auto sm:mx-0 sm:max-w-none sm:w-auto mb-6 sm:mb-8 md:mb-0'> 
+                <Image className='w-full h-auto max-h-[370px] object-contain' src={item.thumbnail}/>
+              </div>
+                <CommonHeading className='pt-6 sm:pt-10 md:pt-16 pb-3 sm:pb-4 text-lg sm:text-xl md:text-2xl' text={item.title}/>
 
               {/* Rating row (stars + review count) */}
-      <Flex className='gap-x-6 items-center'>
+      <Flex className='flex-col sm:flex-row gap-3 sm:gap-x-6 items-start sm:items-center mb-4 sm:mb-6'>
         <Flex className='gap-x-2'>
           
-        <FaStar onClick={handleStar1} className={star1?'text-[#FFD700]':'text-[#B6B6B6]'}/>
-        <FaStar onClick={handleStar2} className={star2?'text-[#FFD700]':'text-[#B6B6B6]'}/>
-        <FaStar onClick={handleStar3} className={star3?'text-[#FFD700]':'text-[#B6B6B6]'}/>
-        <FaStar onClick={handleStar4} className={star4?'text-[#FFD700]':'text-[#B6B6B6]'}/>
-        <FaStar onClick={handleStar5} className={star5?'text-[#FFD700]':'text-[#B6B6B6]'}/>
+        <FaStar onClick={handleStar1} className={`cursor-pointer ${star1?'text-[#FFD700]':'text-[#B6B6B6]'}`}/>
+        <FaStar onClick={handleStar2} className={`cursor-pointer ${star2?'text-[#FFD700]':'text-[#B6B6B6]'}`}/>
+        <FaStar onClick={handleStar3} className={`cursor-pointer ${star3?'text-[#FFD700]':'text-[#B6B6B6]'}`}/>
+        <FaStar onClick={handleStar4} className={`cursor-pointer ${star4?'text-[#FFD700]':'text-[#B6B6B6]'}`}/>
+        <FaStar onClick={handleStar5} className={`cursor-pointer ${star5?'text-[#FFD700]':'text-[#B6B6B6]'}`}/>
       </Flex>
-      <p className='text-lightDark text-sm font-DMs font-normal'>{`${item.reviews.length} Reviews`}</p>
+      <p className='text-lightDark text-sm font-DMs font-normal'>{`${item.reviews?.length || 0} Reviews`}</p>
       </Flex>
 
       {/* Price block */}
-      <div className='w-1/2 border-[#D8D8D8] border-b py-6'>
-        <Flex className='text-center gap-[22px]'>
+      <div className='w-full md:w-1/2 border-[#D8D8D8] border-b py-4 sm:py-6'>
+        <Flex className='flex-col sm:flex-row sm:text-center gap-3 sm:gap-[22px]'>
         <SmallList text={`Discount: ${item.discountPercentage}%`} />
-        <SmallList className='!font-extrabold' text={item.price}/>
+        <SmallList className='!font-extrabold' text={`$${item.price}`}/>
         
       </Flex>
       </div>
 
       {/* Color selector (visual swatches) */}
-      <div className='w-1/2 border-[#D8D8D8] border-b py-6'>
-      <Flex className='gap-x-14 items-center py-7'>
+      <div className='w-full md:w-1/2 border-[#D8D8D8] border-b py-4 sm:py-6'>
+      <Flex className='flex-col sm:flex-row gap-4 sm:gap-x-8 md:gap-x-14 items-start sm:items-center py-4 sm:py-7'>
         <SmallList className='!font-extrabold !text-black' text='COLOR'/>
-        <Flex className='items-center gap-x-4'>
-          <div className='bg-[#97979772] h-5 w-5 rounded-full'></div>
-          <div className='bg-[#FF8686] h-5 w-5 rounded-full'></div>
-          <div className='bg-[#7dd32181] h-5 w-5 rounded-full'></div>
-          <div className='bg-[#B6B6B6] h-5 w-5 rounded-full'></div>
-          <div className='bg-[#15CBA5] h-5 w-5 rounded-full'></div>
+        <Flex className='items-center gap-x-3 sm:gap-x-4'>
+          <div className='bg-[#97979772] h-6 w-6 sm:h-5 sm:w-5 rounded-full cursor-pointer'></div>
+          <div className='bg-[#FF8686] h-6 w-6 sm:h-5 sm:w-5 rounded-full cursor-pointer'></div>
+          <div className='bg-[#7dd32181] h-6 w-6 sm:h-5 sm:w-5 rounded-full cursor-pointer'></div>
+          <div className='bg-[#B6B6B6] h-6 w-6 sm:h-5 sm:w-5 rounded-full cursor-pointer'></div>
+          <div className='bg-[#15CBA5] h-6 w-6 sm:h-5 sm:w-5 rounded-full cursor-pointer'></div>
         </Flex>
       </Flex>
 
       {/* Size selector */}
-      <Flex className='gap-x-[76px] items-center py-7'>
+      <Flex className='flex-col sm:flex-row gap-4 sm:gap-x-8 md:gap-x-[76px] items-start sm:items-center py-4 sm:py-7'>
         <SmallList className='!font-extrabold !text-black' text='SIZE'/>
         <Flex className='items-center gap-x-4'>
-         <select className='w-[100px] border'>
+         <select className='w-full sm:w-[100px] border py-2 px-3 text-sm sm:text-base'>
           <option value="">S</option>
           <option value="">L</option>
           <option value="">XXL</option>
@@ -140,31 +142,31 @@ useEffect(()=>{
       </Flex>
 
       {/* Quantity control placeholder UI */}
-      <Flex className='gap-x-[29px] items-center py-7'>
+      <Flex className='flex-col sm:flex-row gap-4 sm:gap-x-6 md:gap-x-[29px] items-start sm:items-center py-4 sm:py-7'>
         <SmallList className='!font-extrabold !text-black' text='QUANTITY'/>
         <Flex className='items-center gap-x-4'>
-         <Flex className='w-[139px] h-[36px] border border-[#F0F0F0] justify-evenly items-center'>
-            <div className=''>+</div>
+         <Flex className='w-full sm:w-[139px] h-[36px] border border-[#F0F0F0] justify-evenly items-center'>
+            <div className='cursor-pointer text-lg'>+</div>
             <div className=''>1</div>
-            <div className=''>-</div>
+            <div className='cursor-pointer text-lg'>-</div>
          </Flex>
         </Flex>
       </Flex>
       </div>
 
       {/* Status / stock */}
-      <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
-      <Flex className='gap-x-14 items-center py-7'>
+      <div className='w-full md:w-1/2 border-[#D8D8D8] border-b py-4'>
+      <Flex className='flex-col sm:flex-row gap-4 sm:gap-x-8 md:gap-x-14 items-start sm:items-center py-4 sm:py-7'>
         <SmallList className='!font-extrabold !text-black' text='STATUS'/>
-       <SmallList text={item.stock}/>
+       <SmallList text={`In Stock: ${item.stock}`}/>
       </Flex>
       </div>
 
       {/* wishlist and add to cart */}
-      <div className='w-1/2 border-[#D8D8D8] border-b py-4'>
-      <Flex className='gap-x-5 items-center py-7'>
-        <Button text='Add to Wish List'/>
-       <Button text='Add To Cart'/>
+      <div className='w-full md:w-1/2 border-[#D8D8D8] border-b py-4'>
+      <Flex className='flex-col sm:flex-row gap-3 sm:gap-x-5 items-stretch sm:items-center py-4 sm:py-7'>
+        <Button className='w-full sm:w-auto' text='Add to Wish List'/>
+       <Button className='w-full sm:w-auto' text='Add To Cart'/>
       </Flex>
       </div>
 
