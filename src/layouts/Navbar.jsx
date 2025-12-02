@@ -28,7 +28,7 @@ function Navbar() {
     <nav className='hidden md:block py-4 sm:py-6 md:py-8 bg-white'>
         <Container>
             <Flex className='items-center'>
-              <div className='w-[38%]'><Image src={Logo} className="w-24 sm:w-32 md:w-auto h-auto" alt=""/> </div>
+              <div className='w-[30%]'><Image src={Logo} className="w-24 sm:w-32 md:w-auto h-auto" alt=""/> </div>
               <div className='w-[40%]'>
               <ul className='flex gap-6 lg:gap-10 justify-center'>
                 <Link onClick={()=>(handleBreadCrumb('Home'))} to='/'><List text='Home'/></Link>

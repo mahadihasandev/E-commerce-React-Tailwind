@@ -17,7 +17,7 @@ function Footer() {
     <Flex className='ml-0 sm:ml-4 md:ml-10 gap-x-4 sm:gap-x-6 md:gap-x-10 flex-wrap md:flex-nowrap'>
         <div className='w-full sm:w-1/2 md:w-[14%] mb-6 sm:mb-8 md:mb-0'>
         <MidList className="text-sm sm:text-base md:text-[16px] pb-3 sm:pb-4 md:pb-[17px]" text="MENU"/>
-        <ul className='flex flex-col gap-y-2 sm:gap-y-[6px]'>
+        <ul className='flex flex-col gap-y-2  sm:gap-y-[6px]'>
           <li><SmallList text="Home"/></li>
           <li><SmallList text="Shop"/></li>
           <li><SmallList text="About"/></li>
