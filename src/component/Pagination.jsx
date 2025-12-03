@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import Card from './Card';
-import data from '../data';
 import axios from 'axios';
 
 
@@ -13,7 +11,7 @@ function Items({ currentItems }) {
       <div className="flex flex-wrap gap-x-4 sm:gap-x-6 md:gap-x-[46px] gap-y-6 sm:gap-y-8 justify-center sm:justify-start">
         {currentItems &&
         currentItems.map((item,index) => (
-          <div key={index} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-1.5rem)]">
+          <div key={index} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(24%-1.5rem)]">
             <Card id={item.id} nameText={item.title} src={item.thumbnail} priceText={item.price} />
           </div>
         ))}

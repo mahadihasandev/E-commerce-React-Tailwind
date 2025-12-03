@@ -108,8 +108,9 @@ function Shop() {
             </div>
 
             {/* Right column product controls paginated listing */}
-            <div className="w-full lg:w-9/12">
-                <Flex className="flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mt-3 sm:mt-5 mb-4 sm:mb-5">
+            <div className="w-full lg:w-9/12 flex-wrap">
+                <Flex className="flex-col sm:flex-row justify-between items-start sm:items-center gap-8 
+                sm:gap-0 mt-3 sm:mt-5 mb-4 sm:mb-5">
                   {/* View toggle (grid / list) purely visual icons */}
                   <Flex className='gap-x-3'>
                     <GrAppsRounded className="text-xl sm:text-2xl cursor-pointer"/>
